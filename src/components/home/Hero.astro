@@ -1,0 +1,99 @@
+---
+import { heroData } from "@/data/home";
+---
+
+<section class="relative -mt-[72px] lg:-mt-[84px] min-h-screen flex items-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src={heroData.image}
+      alt="Doblado Valle - Ferretería y Construcción"
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+    <div class="gradient-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Grid Pattern Overlay -->
+  <div
+    class="absolute inset-0 opacity-[0.03]"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+      backgroundSize: "80px 80px",
+    }}
+  >
+  </div>
+
+  <!-- Content -->
+  <div class="container-custom relative z-10 pt-32 pb-20 md:pt-40 md:pb-28">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div
+        class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 backdrop-blur-sm"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>
+        <span
+          class="text-xs font-medium tracking-widest text-white/80 uppercase"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {heroData.badge}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1
+        class="mb-6 text-white text-balance leading-[1.05]"
+      >
+        {heroData.title}
+      </h1>
+
+      <!-- Description -->
+      <p
+        class="mb-10 max-w-xl text-base text-white/60 leading-relaxed md:text-lg"
+      >
+        {heroData.description}
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <a
+          href={heroData.cta.href}
+          class="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-xl"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {heroData.cta.label}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+        <a
+          href={heroData.ctaSecondary.href}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold tracking-[0.15em] text-white uppercase backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {heroData.ctaSecondary.label}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-2">
+    <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase" style={{ fontFamily: "var(--font-body)" }}>
+      Scroll
+    </span>
+    <div class="h-12 w-px bg-gradient-to-b from-white/30 to-transparent"></div>
+  </div>
+</section>

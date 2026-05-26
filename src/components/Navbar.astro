@@ -1,0 +1,118 @@
+---
+import { routes, companyInfo } from "@/data/routes";
+import MobileMenu from "@/components/shared/MobileMenu.tsx";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="container-custom">
+    <nav
+      class="flex items-center justify-between py-4 lg:py-5"
+      aria-label="Navegación principal"
+    >
+      <!-- Logo -->
+      <a
+        href="/"
+        class="relative z-60 flex items-center gap-3"
+        aria-label={companyInfo.shortName}
+      >
+        <img
+          src="/horizonLogo.bmp"
+          alt={companyInfo.shortName}
+          class="h-10 w-auto md:h-12 object-contain"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center gap-1 lg:flex">
+        {
+          routes.map((route) => (
+            <a
+              href={route.href}
+              class={`nav-link relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                currentPath === route.href
+                  ? "text-primary"
+                  : "text-ink/70 hover:text-ink"
+              }`}
+              style={{ fontFamily: "var(--font-heading)" }}
+              aria-current={currentPath === route.href ? "page" : undefined}
+            >
+              {route.label}
+              {currentPath === route.href && (
+                <span class="absolute bottom-0 left-4 right-4 h-0.5 rounded-full bg-primary" />
+              )}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="hidden items-center gap-4 lg:flex">
+        <a
+          href="/contacto"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-xs font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Cotizar
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu (React Island) -->
+      <MobileMenu routes={routes} currentPath={currentPath} client:load />
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer to prevent content from going behind fixed navbar -->
+<div class="h-[72px] lg:h-[84px]"></div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    let lastScrollY = 0;
+
+    const updateNavbar = () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY > 50) {
+        navbar.classList.add(
+          "bg-white/95",
+          "backdrop-blur-md",
+          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+        );
+      } else {
+        navbar.classList.remove(
+          "bg-white/95",
+          "backdrop-blur-md",
+          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+        );
+      }
+
+      lastScrollY = scrollY;
+    };
+
+    window.removeEventListener("scroll", updateNavbar);
+    window.addEventListener("scroll", updateNavbar, { passive: true });
+    updateNavbar();
+  });
+</script>

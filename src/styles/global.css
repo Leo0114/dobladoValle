@@ -3,14 +3,208 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
+@theme {
+  /* ── Brand Colors ── */
   --color-primary: #dea130;
+  --color-primary-light: #e8b854;
+  --color-primary-dark: #c08a20;
   --color-secondary: #ca0119;
+  --color-secondary-light: #e01e35;
+  --color-secondary-dark: #a00114;
+
+  /* ── Neutrals (Industrial Palette) ── */
+  --color-ink: #1a1a1a;
+  --color-steel: #2d3436;
+  --color-graphite: #434a4e;
+  --color-concrete: #636e72;
+  --color-slate: #95a0a5;
+  --color-ash: #b2bec3;
+  --color-sand: #f5f1eb;
+  --color-bone: #faf8f5;
+
+  /* ── Semantic ── */
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e5e1db;
+  --color-border-light: #f0ece6;
+
+  /* ── Typography ── */
+  --font-heading: "DM Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* ── Radius ── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  /* ── Shadows ── */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover:
+    0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+  --shadow-elevated:
+    0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+
+  /* ── Animations ── */
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-slide-right: slide-right 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)
+    forwards;
+  --animate-scale-in: scale-in 0.3s ease-out forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
+/* ── Base Styles ── */
 @layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    @apply bg-white text-gray-900 antialiased transition-colors duration-300;
-    @apply dark:bg-gray-950 dark:text-gray-100;
+    @apply bg-surface text-ink antialiased;
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+    font-weight: 700;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-ink);
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* ── Utility Classes ── */
+@layer utilities {
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-padding-sm {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-12;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-4xl px-5 md:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, var(--color-border-light) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border-light) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.7) 0%,
+      rgba(26, 26, 26, 0.5) 40%,
+      rgba(26, 26, 26, 0.8) 100%
+    );
+  }
+
+  .gradient-overlay-light {
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.3) 0%,
+      rgba(26, 26, 26, 0.6) 100%
+    );
   }
 }

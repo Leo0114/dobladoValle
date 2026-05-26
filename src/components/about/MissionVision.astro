@@ -1,0 +1,66 @@
+---
+import { missionVisionData } from "@/data/about";
+---
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <!-- Mission -->
+      <div class="relative rounded-2xl bg-ink p-10 md:p-12 overflow-hidden">
+        <!-- Decorative background -->
+        <div class="absolute top-0 right-0 h-40 w-40 rounded-full bg-primary/5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-primary/5 blur-2xl"></div>
+
+        <div class="relative z-10">
+          <span
+            class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            {missionVisionData.mission.tag}
+          </span>
+          <h3
+            class="mb-6 text-2xl font-semibold text-white md:text-3xl"
+            style={{ fontFamily: "var(--font-heading)", lineHeight: "1.2" }}
+          >
+            {missionVisionData.mission.title}
+          </h3>
+          <p class="text-base leading-relaxed text-white/60">
+            {missionVisionData.mission.content}
+          </p>
+        </div>
+
+        <!-- Corner accent -->
+        <div class="absolute top-0 left-0 h-1 w-20 bg-primary"></div>
+        <div class="absolute top-0 left-0 h-20 w-1 bg-primary"></div>
+      </div>
+
+      <!-- Vision -->
+      <div class="relative rounded-2xl border-2 border-border-light bg-bone p-10 md:p-12 overflow-hidden">
+        <!-- Decorative background -->
+        <div class="absolute top-0 right-0 h-40 w-40 rounded-full bg-primary/5 blur-3xl"></div>
+
+        <div class="relative z-10">
+          <span
+            class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            {missionVisionData.vision.tag}
+          </span>
+          <h3
+            class="mb-6 text-2xl font-semibold text-ink md:text-3xl"
+            style={{ fontFamily: "var(--font-heading)", lineHeight: "1.2" }}
+          >
+            {missionVisionData.vision.title}
+          </h3>
+          <p class="text-base leading-relaxed text-concrete">
+            {missionVisionData.vision.content}
+          </p>
+        </div>
+
+        <!-- Corner accent -->
+        <div class="absolute bottom-0 right-0 h-1 w-20 bg-primary"></div>
+        <div class="absolute bottom-0 right-0 h-20 w-1 bg-primary"></div>
+      </div>
+    </div>
+  </div>
+</section>

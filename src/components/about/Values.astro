@@ -1,0 +1,59 @@
+---
+import SectionTitle from "@/components/shared/SectionTitle.astro";
+import { valuesData } from "@/data/about";
+
+const valueIcons: Record<string, string> = {
+  shield: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10",
+  star: "m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+  users: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75",
+  growth: "M22 12h-4l-3 9L9 3l-3 9H2",
+  handshake: "M11 17a1 1 0 0 1-1 1H6l-4-4 6.768-6.768a2 2 0 0 1 2.828 0l.414.414 M17 7h2a1 1 0 0 1 1 1v3.5 M22 13l-6.768 6.768a2 2 0 0 1-2.828 0l-.414-.414",
+  leaf: "M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.1 19 1c1 2 2 4.5 2 8 0 5.5-4.78 11-10 11Z M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12",
+};
+---
+
+<section class="section-padding bg-sand">
+  <div class="container-custom">
+    <SectionTitle
+      tag={valuesData.tag}
+      title={valuesData.title}
+      description={valuesData.description}
+    />
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        valuesData.items.map((value) => (
+          <div
+            class="group rounded-2xl bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-ink">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d={valueIcons[value.icon] || valueIcons.star} />
+              </svg>
+            </div>
+            <h3
+              class="mb-3 text-base font-semibold text-ink"
+              style={{ fontFamily: "var(--font-heading)", lineHeight: "1.3" }}
+            >
+              {value.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-concrete">
+              {value.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

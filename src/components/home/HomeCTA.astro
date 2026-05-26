@@ -1,0 +1,63 @@
+---
+import { ctaData } from "@/data/home";
+---
+
+<section class="relative overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src={ctaData.image}
+      alt=""
+      class="h-full w-full object-cover"
+      loading="lazy"
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-steel/90"></div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      style={{
+        backgroundImage:
+          "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+      }}
+      class="h-full w-full"
+    >
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container-custom relative z-10 py-24 md:py-32 text-center">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="text-white mb-5 text-balance">
+        {ctaData.title}
+      </h2>
+      <p class="mb-10 text-base text-white/60 leading-relaxed md:text-lg">
+        {ctaData.description}
+      </p>
+      <a
+        href={ctaData.cta.href}
+        class="inline-flex items-center gap-3 rounded-full bg-primary px-10 py-4 text-sm font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-xl"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {ctaData.cta.label}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

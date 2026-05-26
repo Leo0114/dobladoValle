@@ -1,0 +1,53 @@
+---
+interface Props {
+  tag?: string;
+  title: string;
+  description?: string;
+  align?: "left" | "center";
+  light?: boolean;
+}
+
+const {
+  tag,
+  title,
+  description,
+  align = "center",
+  light = false,
+} = Astro.props;
+
+const alignClasses = align === "center" ? "text-center mx-auto" : "text-left";
+const maxWidthClass = align === "center" ? "max-w-3xl" : "max-w-2xl";
+---
+
+<div class={`mb-14 md:mb-20 ${alignClasses} ${maxWidthClass}`}>
+  {
+    tag && (
+      <span
+        class={`inline-block mb-4 text-xs font-semibold tracking-[0.25em] uppercase ${
+          light
+            ? "text-primary-light"
+            : "text-primary"
+        }`}
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {tag}
+      </span>
+    )
+  }
+  <h2
+    class={`text-balance ${light ? "text-white" : "text-ink"}`}
+  >
+    {title}
+  </h2>
+  {
+    description && (
+      <p
+        class={`mt-5 text-base md:text-lg leading-relaxed ${
+          light ? "text-ash" : "text-concrete"
+        }`}
+      >
+        {description}
+      </p>
+    )
+  }
+</div>

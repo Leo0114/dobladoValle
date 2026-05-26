@@ -1,0 +1,36 @@
+---
+import { contactHeroData } from "@/data/contact";
+---
+
+<section class="relative -mt-[72px] lg:-mt-[84px] flex items-center overflow-hidden" style="min-height: 55vh;">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src={contactHeroData.image}
+      alt="Contacto Doblado Valle"
+      class="h-full w-full object-cover"
+      loading="eager"
+    />
+    <div class="gradient-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="container-custom relative z-10 pt-32 pb-16 md:pt-44 md:pb-20">
+    <div class="max-w-3xl">
+      <span
+        class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {contactHeroData.tag}
+      </span>
+      <h1 class="text-white text-balance mb-6">
+        {contactHeroData.title}
+      </h1>
+      <p class="max-w-xl text-base text-white/60 leading-relaxed md:text-lg">
+        {contactHeroData.description}
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sand to-transparent"></div>
+</section>

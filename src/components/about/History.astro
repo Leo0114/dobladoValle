@@ -1,0 +1,64 @@
+---
+import { historyData } from "@/data/about";
+---
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
+      <!-- Text Column -->
+      <div>
+        <span
+          class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {historyData.tag}
+        </span>
+        <h2 class="mb-8 text-balance">
+          {historyData.title}
+        </h2>
+        <div class="space-y-5">
+          {
+            historyData.paragraphs.map((paragraph) => (
+              <p class="text-base leading-relaxed text-concrete">
+                {paragraph}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Image + Stats Column -->
+      <div>
+        <div class="relative mb-8 overflow-hidden rounded-2xl">
+          <img
+            src={historyData.image}
+            alt="Historia de Doblado Valle"
+            class="w-full aspect-[4/3] object-cover"
+            loading="lazy"
+          />
+          <!-- Decorative corner -->
+          <div class="absolute top-0 left-0 h-20 w-20 border-t-4 border-l-4 border-primary rounded-tl-2xl"></div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          {
+            historyData.stats.map((stat) => (
+              <div class="rounded-xl bg-bone p-5 text-center">
+                <span
+                  class="block text-2xl font-bold text-primary md:text-3xl"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {stat.value}
+                </span>
+                <span class="mt-1 block text-xs font-medium tracking-wide text-concrete uppercase">
+                  {stat.label}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
