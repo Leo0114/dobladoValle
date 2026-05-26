@@ -1,13 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark,.dark *));
-
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-    --color-primary: #013383;
-    --color-secondary: #233060;
-    --color-accent: #fab702;
+  --color-primary: #dea130;
+  --color-secondary: #ca0119;
 }
-    
 
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased transition-colors duration-300;
+    @apply dark:bg-gray-950 dark:text-gray-100;
+  }
+}
