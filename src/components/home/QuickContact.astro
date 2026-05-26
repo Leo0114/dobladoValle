@@ -11,29 +11,37 @@ const iconMap: Record<string, string> = {
 const fillIcon = ["whatsapp"];
 ---
 
-<section class="section-padding-sm bg-sand">
+<section class="section-padding-sm section-bone border-t border-border-light dark:border-white/10">
   <div class="container-custom">
-    <SectionTitle
-      tag={quickContactData.tag}
-      title={quickContactData.title}
-      description={quickContactData.description}
-    />
+    <div class="text-center mb-12">
+      <span
+        class="mb-3 inline-block text-xs font-semibold tracking-[0.25em] text-secondary uppercase"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {quickContactData.tag}
+      </span>
+      <h2 class="text-balance text-heading mb-3">
+        {quickContactData.title}
+      </h2>
+      <p class="text-body max-w-2xl mx-auto">
+        {quickContactData.description}
+      </p>
+    </div>
 
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 max-w-3xl mx-auto">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 max-w-4xl mx-auto">
       {
         quickContactData.items.map((item) => (
           <a
             href={item.href}
             target={item.icon === "whatsapp" ? "_blank" : undefined}
             rel={item.icon === "whatsapp" ? "noopener noreferrer" : undefined}
-            class="group flex flex-col items-center gap-4 rounded-2xl bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-            style={{ boxShadow: "var(--shadow-card)" }}
+            class="group flex flex-col items-center gap-4 rounded-2xl card-base p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-card-hover"
           >
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-ink">
+            <div class={`flex h-16 w-16 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 ${item.icon === 'whatsapp' ? 'bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white' : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill={fillIcon.includes(item.icon) ? "currentColor" : "none"}
                 stroke={fillIcon.includes(item.icon) ? "none" : "currentColor"}
@@ -46,13 +54,13 @@ const fillIcon = ["whatsapp"];
             </div>
             <div>
               <span
-                class="block text-xs font-semibold tracking-[0.15em] text-concrete uppercase mb-1"
-                style={{ fontFamily: "var(--font-body)" }}
+                class="block text-sm font-bold tracking-wider text-heading uppercase mb-1"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 {item.label}
               </span>
-              <span class="text-sm font-medium text-ink">
-                {item.value}
+              <span class="text-sm font-medium text-body">
+                {item.action}
               </span>
             </div>
           </a>

@@ -1,9 +1,4 @@
-// ═══════════════════════════════════════════
 // CONTACT PAGE DATA
-// ═══════════════════════════════════════════
-
-const PLACEHOLDER_IMAGE =
-  "https://images.unsplash.com/photo-1603751178823-dbb4110907a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 // ── Hero ──
 export const contactHeroData = {
@@ -11,7 +6,6 @@ export const contactHeroData = {
   title: "Hablemos de tu proyecto",
   description:
     "Estamos listos para atenderte. Envíanos un mensaje o visítanos en cualquiera de nuestras sucursales.",
-  image: PLACEHOLDER_IMAGE,
 };
 
 // ── Form ──
@@ -38,7 +32,7 @@ export const contactFormData = {
       name: "telefono",
       label: "Teléfono",
       type: "tel" as const,
-      placeholder: "+52 (555) 000-0000",
+      placeholder: "Tu número de teléfono",
       required: false,
     },
     {
@@ -62,14 +56,16 @@ export const contactFormData = {
 export interface ContactBranch {
   name: string;
   address: string;
-  phone: string;
-  whatsapp: string;
+  whatsappHref: string;
+  phoneHref: string;
   email: string;
   schedule: {
     weekdays: string;
     saturday: string;
     sunday: string;
   };
+  image: string;
+  mapEmbedUrl?: string;
 }
 
 export const contactInfoData = {
@@ -77,35 +73,32 @@ export const contactInfoData = {
   title: "Visítanos",
   branches: [
     {
-      name: "Sucursal Centro",
-      address: "Av. Ejemplo #123, Col. Centro, Ciudad de México, CP 06000",
-      phone: "+52 (555) 123-4567",
-      whatsapp: "5551234567",
-      email: "centro@dobladovalle.com",
+      name: "Matriz San Pedro",
+      address: "San Pedro, Nuevo León",
+      whatsappHref: "https://wa.me/5551234567",
+      phoneHref: "tel:+525551234567",
+      email: "sanpedro@dobladovalle.com",
       schedule: {
         weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
         saturday: "Sábado: 8:00 AM - 3:00 PM",
         sunday: "Domingo: Cerrado",
       },
+      image: "/src/assets/images/sanPedro/Matriz San Pedro.avif",
+      mapEmbedUrl: "",
     },
     {
-      name: "Sucursal Norte",
-      address: "Blvd. Industrial #456, Col. Industrial, Ciudad de México, CP 07000",
-      phone: "+52 (555) 987-6543",
-      whatsapp: "5559876543",
-      email: "norte@dobladovalle.com",
+      name: "Sucursal San Jemo",
+      address: "San Jerónimo, Nuevo León",
+      whatsappHref: "https://wa.me/5559876543",
+      phoneHref: "tel:+525559876543",
+      email: "sanjemo@dobladovalle.com",
       schedule: {
         weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
         saturday: "Sábado: 8:00 AM - 3:00 PM",
         sunday: "Domingo: Cerrado",
       },
+      image: "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
+      mapEmbedUrl: "",
     },
   ] as ContactBranch[],
-};
-
-// ── Map ──
-export const contactMapData = {
-  title: "Cómo llegar",
-  description: "Ubica nuestras sucursales en el mapa.",
-  placeholder: PLACEHOLDER_IMAGE,
 };

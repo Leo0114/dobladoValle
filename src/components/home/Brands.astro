@@ -3,24 +3,30 @@ import SectionTitle from "@/components/shared/SectionTitle.astro";
 import { brandsData } from "@/data/home";
 ---
 
-<section class="section-padding bg-bone">
+<section class="section-padding section-light border-y border-border-light dark:border-white/10">
   <div class="container-custom">
-    <SectionTitle
-      tag={brandsData.tag}
-      title={brandsData.title}
-      description={brandsData.description}
-    />
+    <div class="text-center mb-16">
+      <span
+        class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-secondary uppercase"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {brandsData.tag}
+      </span>
+      <h2 class="text-balance text-heading max-w-3xl mx-auto">
+        {brandsData.title}
+      </h2>
+    </div>
 
-    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 lg:gap-6">
       {
         brandsData.items.map((brand) => (
-          <div class="group flex items-center justify-center rounded-xl border border-border-light bg-white px-6 py-8 transition-all duration-300 hover:border-primary/20 hover:shadow-card-hover">
-            <span
-              class="text-center text-sm font-semibold tracking-wide text-concrete transition-colors duration-300 group-hover:text-ink"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              {brand.name}
-            </span>
+          <div class="group flex aspect-video items-center justify-center rounded-xl bg-bone dark:bg-white p-4 sm:p-6 transition-all duration-300 hover:shadow-card-hover border border-transparent hover:border-primary/20 hover:-translate-y-1">
+            <img 
+              src={`/src/assets/images/proveedores/${brand.image}`} 
+              alt={`Marca ${brand.name}`} 
+              class="max-h-full max-w-full object-contain mix-blend-multiply opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110"
+              loading="lazy"
+            />
           </div>
         ))
       }

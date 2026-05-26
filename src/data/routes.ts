@@ -33,8 +33,8 @@ export const companyInfo = {
   name: "Doblado Valle, S.A. de C.V.",
   shortName: "Doblado Valle",
   tagline: "Soluciones ferreteras para construcción e industria",
-  phone: "+52 (555) 123-4567",
-  whatsapp: "5551234567",
+  whatsappHref: "https://wa.me/5551234567",
+  phoneHref: "tel:+525551234567",
   email: "contacto@dobladovalle.com",
   foundedYear: 1990,
 };

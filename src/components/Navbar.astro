@@ -1,6 +1,7 @@
 ---
 import { routes, companyInfo } from "@/data/routes";
 import MobileMenu from "@/components/shared/MobileMenu.tsx";
+import ThemeToggle from "@/components/shared/ThemeToggle.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -20,10 +21,19 @@ const currentPath = Astro.url.pathname;
         class="relative z-60 flex items-center gap-3"
         aria-label={companyInfo.shortName}
       >
+        <!-- Original logo for scrolled state (dark text) -->
         <img
           src="/horizonLogo.bmp"
+          id="logo-dark"
           alt={companyInfo.shortName}
-          class="h-10 w-auto md:h-12 object-contain"
+          class="h-10 w-auto md:h-12 object-contain hidden dark:hidden"
+        />
+        <!-- White/Inverted logo for top/dark mode -->
+        <img
+          src="/horizonLogo.bmp"
+          id="logo-light"
+          alt={companyInfo.shortName}
+          class="h-10 w-auto md:h-12 object-contain brightness-0 invert"
         />
       </a>
 
@@ -33,10 +43,10 @@ const currentPath = Astro.url.pathname;
           routes.map((route) => (
             <a
               href={route.href}
-              class={`nav-link relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+              class={`nav-link relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 text-white/90 hover:text-white [&.scrolled]:text-ink/70 [&.scrolled]:hover:text-ink [&.scrolled]:dark:text-white/80 [&.scrolled]:dark:hover:text-white ${
                 currentPath === route.href
-                  ? "text-primary"
-                  : "text-ink/70 hover:text-ink"
+                  ? "[&.scrolled]:text-primary text-white"
+                  : ""
               }`}
               style={{ fontFamily: "var(--font-heading)" }}
               aria-current={currentPath === route.href ? "page" : undefined}
@@ -50,29 +60,9 @@ const currentPath = Astro.url.pathname;
         }
       </div>
 
-      <!-- Desktop CTA -->
+      <!-- Desktop CTA & Theme -->
       <div class="hidden items-center gap-4 lg:flex">
-        <a
-          href="/contacto"
-          class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-xs font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          Cotizar
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m12 5 7 7-7 7"></path>
-          </svg>
-        </a>
+        <ThemeToggle />
       </div>
 
       <!-- Mobile Menu (React Island) -->
@@ -81,15 +71,17 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
-<!-- Spacer to prevent content from going behind fixed navbar -->
-<div class="h-[72px] lg:h-[84px]"></div>
+<!-- Spacer removed because we want the hero to go under the navbar initially -->
 
 <script>
   document.addEventListener("astro:page-load", () => {
     const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const themeToggle = document.getElementById("theme-toggle");
+    const logoDark = document.getElementById("logo-dark");
+    const logoLight = document.getElementById("logo-light");
+    
     if (!navbar) return;
-
-    let lastScrollY = 0;
 
     const updateNavbar = () => {
       const scrollY = window.scrollY;
@@ -97,19 +89,52 @@ const currentPath = Astro.url.pathname;
       if (scrollY > 50) {
         navbar.classList.add(
           "bg-white/95",
+          "dark:bg-steel/95",
           "backdrop-blur-md",
-          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]",
+          "dark:shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
         );
+        
+        navLinks.forEach(link => link.classList.add("scrolled"));
+        if (themeToggle) themeToggle.classList.add("scrolled");
+        
+        // Show dark logo when scrolled in light mode
+        if (!document.documentElement.classList.contains('dark')) {
+          if (logoDark) logoDark.classList.remove("hidden");
+          if (logoLight) logoLight.classList.add("hidden");
+        } else {
+          // Always show white logo in dark mode
+          if (logoDark) logoDark.classList.add("hidden");
+          if (logoLight) logoLight.classList.remove("hidden");
+        }
       } else {
         navbar.classList.remove(
           "bg-white/95",
+          "dark:bg-steel/95",
           "backdrop-blur-md",
-          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+          "shadow-[0_1px_3px_rgba(0,0,0,0.05)]",
+          "dark:shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
         );
+        
+        navLinks.forEach(link => link.classList.remove("scrolled"));
+        if (themeToggle) themeToggle.classList.remove("scrolled");
+        
+        // Always show white logo when at top
+        if (logoDark) logoDark.classList.add("hidden");
+        if (logoLight) logoLight.classList.remove("hidden");
       }
-
-      lastScrollY = scrollY;
     };
+
+    // Watch for theme changes to update logo appropriately when scrolled
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === "class") {
+          updateNavbar();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
 
     window.removeEventListener("scroll", updateNavbar);
     window.addEventListener("scroll", updateNavbar, { passive: true });

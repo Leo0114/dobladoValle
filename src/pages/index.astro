@@ -1,8 +1,9 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import Hero from "@/components/home/Hero.astro";
+import HeroSlider from "@/components/home/HeroSlider.tsx";
 import Services from "@/components/home/Services.astro";
 import Categories from "@/components/home/Categories.astro";
+import TopProducts from "@/components/home/TopProducts.tsx";
 import Brands from "@/components/home/Brands.astro";
 import HomeCTA from "@/components/home/HomeCTA.astro";
 import Branches from "@/components/home/Branches.astro";
@@ -10,9 +11,10 @@ import QuickContact from "@/components/home/QuickContact.astro";
 ---
 
 <MainLayout>
-  <Hero />
+  <HeroSlider client:load />
   <Services />
   <Categories />
+  <TopProducts client:load />
   <Brands />
   <HomeCTA />
   <Branches />

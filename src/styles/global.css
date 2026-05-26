@@ -12,7 +12,7 @@
   --color-secondary-light: #e01e35;
   --color-secondary-dark: #a00114;
 
-  /* ── Neutrals (Industrial Palette) ── */
+  /* ── Neutrals ── */
   --color-ink: #1a1a1a;
   --color-steel: #2d3436;
   --color-graphite: #434a4e;
@@ -110,6 +110,7 @@
 
   body {
     @apply bg-surface text-ink antialiased;
+    @apply dark:bg-ink dark:text-white/90;
     font-family: var(--font-body);
     line-height: 1.7;
   }
@@ -125,6 +126,15 @@
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--color-ink);
+  }
+
+  :where(.dark) h1,
+  :where(.dark) h2,
+  :where(.dark) h3,
+  :where(.dark) h4,
+  :where(.dark) h5,
+  :where(.dark) h6 {
+    color: #ffffff;
   }
 
   h1 {
@@ -186,8 +196,16 @@
 
   .bg-grid-pattern {
     background-image:
-      linear-gradient(to right, var(--color-border-light) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-border-light) 1px, transparent 1px);
+      linear-gradient(
+        to right,
+        var(--color-border-light) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-border-light) 1px,
+        transparent 1px
+      );
     background-size: 60px 60px;
   }
 
@@ -206,5 +224,34 @@
       rgba(26, 26, 26, 0.3) 0%,
       rgba(26, 26, 26, 0.6) 100%
     );
+  }
+
+  /* Dark mode section overrides */
+  .section-light {
+    @apply bg-white dark:bg-steel;
+  }
+
+  .section-sand {
+    @apply bg-sand dark:bg-ink;
+  }
+
+  .section-bone {
+    @apply bg-bone dark:bg-graphite;
+  }
+
+  .card-base {
+    @apply bg-white dark:bg-steel border-border-light dark:border-white/10;
+  }
+
+  .card-alt {
+    @apply bg-bone dark:bg-graphite border-border-light dark:border-white/10;
+  }
+
+  .text-body {
+    @apply text-concrete dark:text-ash;
+  }
+
+  .text-heading {
+    @apply text-ink dark:text-white;
   }
 }

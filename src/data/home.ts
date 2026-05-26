@@ -1,26 +1,36 @@
-// ═══════════════════════════════════════════
 // HOME PAGE DATA
-// ═══════════════════════════════════════════
 
-const PLACEHOLDER_IMAGE =
-  "https://images.unsplash.com/photo-1603751178823-dbb4110907a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+// ── Hero Slides ──
+export interface HeroSlide {
+  title: string;
+  description: string;
+  cta: { label: string; href: string };
+  imagePath: string;
+}
 
-// ── Hero ──
-export const heroData = {
-  badge: "Más de 30 años de experiencia",
-  title: "Soluciones ferreteras para construcción e industria",
-  description:
-    "Productos de calidad y asesoría especializada para proyectos domésticos, industriales y comerciales. Su aliado confiable en el ramo ferretero.",
-  cta: {
-    label: "Ver productos",
-    href: "/productos",
+export const heroSlides: HeroSlide[] = [
+  {
+    title: "Tu ferretería de confianza",
+    description:
+      "Más de 30 años surtiendo productos de calidad para construcción, reparación y mantenimiento.",
+    cta: { label: "Ver productos", href: "/productos" },
+    imagePath: "/src/assets/images/sanPedro/Mostrador matriz 1.avif",
   },
-  ctaSecondary: {
-    label: "Contáctanos",
-    href: "/contacto",
+  {
+    title: "Las mejores marcas del mercado",
+    description:
+      "Trabajamos con Dewalt, Makita, Milwaukee, Truper, Urrea y muchas más.",
+    cta: { label: "Conocer marcas", href: "/productos" },
+    imagePath: "/src/assets/images/sanPedro/Mostrador matriz 2.avif",
   },
-  image: PLACEHOLDER_IMAGE,
-};
+  {
+    title: "Dos sucursales para servirte",
+    description:
+      "Visítanos en nuestras sucursales San Pedro y San Jemo. Atención personalizada garantizada.",
+    cta: { label: "Ubicaciones", href: "/contacto" },
+    imagePath: "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
+  },
+];
 
 // ── Services ──
 export interface ServiceItem {
@@ -71,7 +81,6 @@ export const servicesData = {
 // ── Categories ──
 export interface CategoryItem {
   name: string;
-  image: string;
   href: string;
 }
 
@@ -81,42 +90,86 @@ export const categoriesData = {
   description:
     "Encuentra todo lo que necesitas para tu proyecto en nuestras categorías especializadas.",
   items: [
-    { name: "Herramientas", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Pinturas", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Material Eléctrico", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Material de Plomería", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Adhesivos", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Seguridad Industrial", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Iluminación", image: PLACEHOLDER_IMAGE, href: "/productos" },
-    { name: "Construcción", image: PLACEHOLDER_IMAGE, href: "/productos" },
+    { name: "Herramientas", href: "/productos" },
+    { name: "Pinturas", href: "/productos" },
+    { name: "Material Eléctrico", href: "/productos" },
+    { name: "Material de Plomería", href: "/productos" },
+    { name: "Adhesivos", href: "/productos" },
+    { name: "Seguridad Industrial", href: "/productos" },
+    { name: "Iluminación", href: "/productos" },
+    { name: "Construcción", href: "/productos" },
+    { name: "Abrasivos", href: "/productos" },
+    { name: "Impermeabilizantes", href: "/productos" },
   ] as CategoryItem[],
 };
 
-// ── Brands ──
+// ── Brands (real image files) ──
 export interface BrandItem {
   name: string;
-  logo?: string;
+  image: string;
 }
 
 export const brandsData = {
   tag: "Marcas aliadas",
   title: "Trabajamos con las mejores marcas",
   description:
-    "Contamos con productos de las marcas más reconocidas en el ramo ferretero y de construcción.",
+    "Contamos con productos de las marcas más reconocidas del ramo ferretero.",
   items: [
-    { name: "Dewalt" },
-    { name: "Makita" },
-    { name: "Truper" },
-    { name: "Milwaukee" },
-    { name: "Sherwin Williams" },
-    { name: "Urrea" },
-    { name: "3M" },
-    { name: "Sika" },
-    { name: "Tecnolite" },
-    { name: "Stanley" },
-    { name: "Bosch" },
-    { name: "Comex" },
+    { name: "3M", image: "3M.jpg" },
+    { name: "Argos", image: "Argos.jpg" },
+    { name: "Armor", image: "Armor.jpg" },
+    { name: "Berel", image: "Berel.jpg" },
+    { name: "Biolim", image: "Biolim.jpg" },
+    { name: "ByP", image: "ByP.jpg" },
+    { name: "Coflex", image: "Coflex.jpg" },
+    { name: "Cuprum", image: "Cuprum.jpg" },
+    { name: "Dewalt", image: "Dewalt.jpg" },
+    { name: "Dexter", image: "Dexter.jpg" },
+    { name: "Dica", image: "Dica.jpg" },
+    { name: "Doal", image: "Doal.jpg" },
+    { name: "Eagle Cooper", image: "Eagle-Cooper.jpg" },
+    { name: "Foset", image: "Foset.jpg" },
+    { name: "Handy Home", image: "Handy Home.jpg" },
+    { name: "Helvex", image: "Helvex.jpg" },
+    { name: "Hermex", image: "Hermex.jpg" },
+    { name: "Igesa", image: "Igesa.jpg" },
+    { name: "Impac", image: "Impac.jpg" },
+    { name: "Magg", image: "Magg.jpg" },
+    { name: "Makita", image: "Makita.jpg" },
+    { name: "Milwaukee", image: "Milwaukee.jpg" },
+    { name: "Osram", image: "Osram.jpg" },
+    { name: "Phillips", image: "Phillips.jpg" },
+    { name: "Rugo", image: "Rugo.jpg" },
+    { name: "Sayer", image: "Sayer.jpg" },
+    { name: "Square D", image: "Square D.jpg" },
+    { name: "Tecnolite", image: "Tecnolite.jpg" },
+    { name: "Truper", image: "Truper.jpg" },
+    { name: "Tunix", image: "Tunix.jpg" },
+    { name: "Urrea", image: "Urrea.jpg" },
+    { name: "Volteck", image: "Volteck.jpg" },
+    { name: "Xito", image: "xito.jpg" },
   ] as BrandItem[],
+};
+
+// ── Top Products (featured brands for slider) ──
+export const topProductsData = {
+  tag: "Destacados",
+  title: "Productos que marcan la diferencia",
+  description: "Las marcas más solicitadas por nuestros clientes.",
+  items: [
+    { name: "Dewalt", image: "Dewalt.jpg", category: "Herramientas" },
+    { name: "Makita", image: "Makita.jpg", category: "Herramientas" },
+    { name: "Milwaukee", image: "Milwaukee.jpg", category: "Herramientas" },
+    { name: "Truper", image: "Truper.jpg", category: "Herramientas" },
+    { name: "Urrea", image: "Urrea.jpg", category: "Herramientas" },
+    { name: "Berel", image: "Berel.jpg", category: "Pinturas" },
+    { name: "Sayer", image: "Sayer.jpg", category: "Pinturas" },
+    { name: "Tecnolite", image: "Tecnolite.jpg", category: "Iluminación" },
+    { name: "Helvex", image: "Helvex.jpg", category: "Plomería" },
+    { name: "Coflex", image: "Coflex.jpg", category: "Plomería" },
+    { name: "Volteck", image: "Volteck.jpg", category: "Eléctrico" },
+    { name: "3M", image: "3M.jpg", category: "Adhesivos" },
+  ],
 };
 
 // ── CTA ──
@@ -128,16 +181,17 @@ export const ctaData = {
     label: "Solicitar cotización",
     href: "/contacto",
   },
-  image: PLACEHOLDER_IMAGE,
 };
 
 // ── Branches ──
 export interface BranchItem {
   name: string;
   address: string;
-  phone: string;
   schedule: string;
-  mapPlaceholder?: string;
+  whatsappHref: string;
+  phoneHref: string;
+  images: string[];
+  mapEmbedUrl?: string;
 }
 
 export const branchesData = {
@@ -146,16 +200,28 @@ export const branchesData = {
   description: "Visítanos en cualquiera de nuestras sucursales.",
   items: [
     {
-      name: "Sucursal Centro",
-      address: "Av. Ejemplo #123, Col. Centro, Ciudad de México, CP 06000",
-      phone: "+52 (555) 123-4567",
-      schedule: "Lunes a Sábado: 8:00 AM - 7:00 PM",
+      name: "Matriz San Pedro",
+      address: "San Pedro, Nuevo León",
+      schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
+      whatsappHref: "https://wa.me/5551234567",
+      phoneHref: "tel:+525551234567",
+      images: [
+        "/src/assets/images/sanPedro/Matriz San Pedro.avif",
+        "/src/assets/images/sanPedro/Mostrador matriz 1.avif",
+      ],
+      mapEmbedUrl: "",
     },
     {
-      name: "Sucursal Norte",
-      address: "Blvd. Industrial #456, Col. Industrial, Ciudad de México, CP 07000",
-      phone: "+52 (555) 987-6543",
-      schedule: "Lunes a Sábado: 8:00 AM - 7:00 PM",
+      name: "Sucursal San Jemo",
+      address: "San Jerónimo, Nuevo León",
+      schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
+      whatsappHref: "https://wa.me/5559876543",
+      phoneHref: "tel:+525559876543",
+      images: [
+        "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
+        "/src/assets/images/sanJemo/Mostrador San Jemo 2.avif",
+      ],
+      mapEmbedUrl: "",
     },
   ] as BranchItem[],
 };
@@ -169,19 +235,19 @@ export const quickContactData = {
     {
       icon: "whatsapp",
       label: "WhatsApp",
-      value: "+52 (555) 123-4567",
+      action: "Escríbenos ahora",
       href: "https://wa.me/5551234567",
     },
     {
       icon: "phone",
-      label: "Teléfono",
-      value: "+52 (555) 123-4567",
+      label: "Llamar",
+      action: "Habla con un asesor",
       href: "tel:+525551234567",
     },
     {
       icon: "email",
       label: "Email",
-      value: "contacto@dobladovalle.com",
+      action: "Envíanos un correo",
       href: "mailto:contacto@dobladovalle.com",
     },
   ],
