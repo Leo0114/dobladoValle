@@ -75,7 +75,7 @@ export default function TopProducts() {
               <div className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm border border-border-light transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-primary/30 dark:bg-steel dark:border-white/10 dark:hover:border-primary/50">
                 <div className="mb-6 flex aspect-square w-full items-center justify-center rounded-xl bg-bone p-4 dark:bg-white">
                   <img
-                    src={`/src/assets/images/proveedores/${item.image}`}
+                    src={item.image.src}
                     alt={item.name}
                     className="h-full w-full object-contain mix-blend-multiply opacity-90 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500"
                     loading="lazy"

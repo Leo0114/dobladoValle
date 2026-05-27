@@ -3,15 +3,18 @@ import SectionTitle from "@/components/shared/SectionTitle.astro";
 import { servicesData } from "@/data/home";
 
 const iconMap: Record<string, string> = {
-  paint: "M9.06 2.7c.12-.08.27-.12.41-.12h5.06c.14 0 .29.04.41.12l3.34 2.22c.26.17.42.46.42.78v5.06c0 .41-.34.75-.75.75h-1.19v6.59a1.5 1.5 0 0 1-1.5 1.5h-6.52a1.5 1.5 0 0 1-1.5-1.5V11.5H6.25a.75.75 0 0 1-.75-.75V5.7c0-.32.16-.61.42-.78L9.06 2.7Z",
+  paint:
+    "M9.06 2.7c.12-.08.27-.12.41-.12h5.06c.14 0 .29.04.41.12l3.34 2.22c.26.17.42.46.42.78v5.06c0 .41-.34.75-.75.75h-1.19v6.59a1.5 1.5 0 0 1-1.5 1.5h-6.52a1.5 1.5 0 0 1-1.5-1.5V11.5H6.25a.75.75 0 0 1-.75-.75V5.7c0-.32.16-.61.42-.78L9.06 2.7Z",
   key: "M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4",
-  thread: "M14 22v-4a2 2 0 1 0-4 0v4 M2 6h4v6H2z M18 6h4v6h-4z M6 9h12 M4 6V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2",
+  thread:
+    "M14 22v-4a2 2 0 1 0-4 0v4 M2 6h4v6H2z M18 6h4v6h-4z M6 9h12 M4 6V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2",
   mesh: "M3 3h18v18H3z M3 9h18 M3 15h18 M9 3v18 M15 3v18",
-  truck: "M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h1 M15 18H9 M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14 M17 18a2 2 0 1 1-4 0 M7 18a2 2 0 1 1-4 0",
+  truck:
+    "M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h1 M15 18H9 M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14 M17 18a2 2 0 1 1-4 0 M7 18a2 2 0 1 1-4 0",
 };
 ---
 
-<section class="section-padding bg-sand">
+<section class="section-padding bg-slate-100 dark:bg-slate-900">
   <div class="container-custom">
     <SectionTitle
       tag={servicesData.tag}
@@ -19,15 +22,17 @@ const iconMap: Record<string, string> = {
       description={servicesData.description}
     />
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <div
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+    >
       {
         servicesData.items.map((service, index) => (
           <div
-            class="group relative rounded-2xl bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+            class="group relative rounded-2xl bg-white dark:bg-slate-800 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
             style={{ boxShadow: "var(--shadow-card)" }}
           >
             {/* Icon */}
-            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-ink">
+            <div class="mb-5 transition-colors ease-in flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-secondary/10 dark:text-secondary duration-300 group-hover:bg-primary dark:group-hover:bg-secondary group-hover:text-slate-900 dark:group-hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -44,15 +49,18 @@ const iconMap: Record<string, string> = {
             </div>
 
             {/* Content */}
-            <h3 class="mb-2 text-base font-semibold text-ink" style={{ fontFamily: "var(--font-heading)", lineHeight: "1.3" }}>
+            <h3
+              class="mb-2 text-base font-semibold text-ink dark:text-white transition-colors"
+              style={{ fontFamily: "var(--font-heading)", lineHeight: "1.3" }}
+            >
               {service.title}
             </h3>
-            <p class="text-sm leading-relaxed text-concrete">
+            <p class="text-sm leading-relaxed text-concrete dark:text-slate-400">
               {service.description}
             </p>
 
             {/* Hover accent line */}
-            <div class="absolute bottom-0 left-7 right-7 h-0.5 rounded-full bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div class="absolute bottom-0 left-7 right-7 h-0.5 rounded-full bg-primary dark:bg-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
         ))
       }

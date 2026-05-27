@@ -3,7 +3,7 @@ import SectionTitle from "@/components/shared/SectionTitle.astro";
 import { categoriesData } from "@/data/home";
 ---
 
-<section class="section-padding bg-white">
+<section class="section-padding bg-white dark:bg-steel/30">
   <div class="container-custom">
     <SectionTitle
       tag={categoriesData.tag}
@@ -38,7 +38,10 @@ import { categoriesData } from "@/data/home";
                 {category.name}
               </h3>
               <div class="mt-2 flex items-center gap-2 text-white/60 opacity-0 transition-all duration-300 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
-                <span class="text-xs tracking-wide" style={{ fontFamily: "var(--font-body)" }}>
+                <span
+                  class="text-xs tracking-wide"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
                   Explorar
                 </span>
                 <svg

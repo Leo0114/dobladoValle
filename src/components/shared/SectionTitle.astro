@@ -24,9 +24,7 @@ const maxWidthClass = align === "center" ? "max-w-3xl" : "max-w-2xl";
     tag && (
       <span
         class={`inline-block mb-4 text-xs font-semibold tracking-[0.25em] uppercase ${
-          light
-            ? "text-primary-light"
-            : "text-primary"
+          light ? "text-secondary-light" : "text-secondary"
         }`}
         style={{ fontFamily: "var(--font-body)" }}
       >
@@ -34,17 +32,13 @@ const maxWidthClass = align === "center" ? "max-w-3xl" : "max-w-2xl";
       </span>
     )
   }
-  <h2
-    class={`text-balance ${light ? "text-white" : "text-ink"}`}
-  >
+  <h2 class={`text-balance text-slate-950 dark:text-white`}>
     {title}
   </h2>
   {
     description && (
       <p
-        class={`mt-5 text-base md:text-lg leading-relaxed ${
-          light ? "text-ash" : "text-concrete"
-        }`}
+        class={`mt-5 text-base md:text-lg leading-relaxed text-slate-950 dark:text-slate-400`}
       >
         {description}
       </p>

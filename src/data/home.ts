@@ -1,4 +1,43 @@
-// HOME PAGE DATA
+import type { ImageMetadata } from "astro";
+import {
+  sanPedro1,
+  sanPedro2,
+  sanJemo1,
+  sanJemo2,
+  treesm,
+  argos,
+  armor,
+  berel,
+  biolim,
+  byp,
+  coflex,
+  cuprum,
+  dewalt,
+  dexter,
+  dica,
+  doal,
+  eagleCooper,
+  foset,
+  handyHome,
+  helvex,
+  hermex,
+  igesa,
+  impac,
+  magg,
+  makita,
+  milwaukee,
+  osram,
+  phillips,
+  rugo,
+  sayer,
+  squareD,
+  tecnolite,
+  truper,
+  tunix,
+  urrea,
+  volteck,
+  xito,
+} from "./proveedores";
 
 // ── Hero Slides ──
 export interface HeroSlide {
@@ -14,21 +53,21 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Más de 30 años surtiendo productos de calidad para construcción, reparación y mantenimiento.",
     cta: { label: "Ver productos", href: "/productos" },
-    imagePath: "/src/assets/images/sanPedro/Mostrador matriz 1.avif",
+    imagePath: "/images/matriz4.avif",
   },
   {
     title: "Las mejores marcas del mercado",
     description:
       "Trabajamos con Dewalt, Makita, Milwaukee, Truper, Urrea y muchas más.",
     cta: { label: "Conocer marcas", href: "/productos" },
-    imagePath: "/src/assets/images/sanPedro/Mostrador matriz 2.avif",
+    imagePath: "/images/matriz2.avif",
   },
   {
     title: "Dos sucursales para servirte",
     description:
       "Visítanos en nuestras sucursales San Pedro y San Jemo. Atención personalizada garantizada.",
     cta: { label: "Ubicaciones", href: "/contacto" },
-    imagePath: "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
+    imagePath: "/images/jemo.avif",
   },
 ];
 
@@ -66,8 +105,7 @@ export const servicesData = {
     {
       icon: "mesh",
       title: "Reparación de mosquiteros",
-      description:
-        "Reparación y fabricación de telas mosquiteras a la medida.",
+      description: "Reparación y fabricación de telas mosquiteras a la medida.",
     },
     {
       icon: "truck",
@@ -106,7 +144,7 @@ export const categoriesData = {
 // ── Brands (real image files) ──
 export interface BrandItem {
   name: string;
-  image: string;
+  image: ImageMetadata;
 }
 
 export const brandsData = {
@@ -115,39 +153,39 @@ export const brandsData = {
   description:
     "Contamos con productos de las marcas más reconocidas del ramo ferretero.",
   items: [
-    { name: "3M", image: "3M.jpg" },
-    { name: "Argos", image: "Argos.jpg" },
-    { name: "Armor", image: "Armor.jpg" },
-    { name: "Berel", image: "Berel.jpg" },
-    { name: "Biolim", image: "Biolim.jpg" },
-    { name: "ByP", image: "ByP.jpg" },
-    { name: "Coflex", image: "Coflex.jpg" },
-    { name: "Cuprum", image: "Cuprum.jpg" },
-    { name: "Dewalt", image: "Dewalt.jpg" },
-    { name: "Dexter", image: "Dexter.jpg" },
-    { name: "Dica", image: "Dica.jpg" },
-    { name: "Doal", image: "Doal.jpg" },
-    { name: "Eagle Cooper", image: "Eagle-Cooper.jpg" },
-    { name: "Foset", image: "Foset.jpg" },
-    { name: "Handy Home", image: "Handy Home.jpg" },
-    { name: "Helvex", image: "Helvex.jpg" },
-    { name: "Hermex", image: "Hermex.jpg" },
-    { name: "Igesa", image: "Igesa.jpg" },
-    { name: "Impac", image: "Impac.jpg" },
-    { name: "Magg", image: "Magg.jpg" },
-    { name: "Makita", image: "Makita.jpg" },
-    { name: "Milwaukee", image: "Milwaukee.jpg" },
-    { name: "Osram", image: "Osram.jpg" },
-    { name: "Phillips", image: "Phillips.jpg" },
-    { name: "Rugo", image: "Rugo.jpg" },
-    { name: "Sayer", image: "Sayer.jpg" },
-    { name: "Square D", image: "Square D.jpg" },
-    { name: "Tecnolite", image: "Tecnolite.jpg" },
-    { name: "Truper", image: "Truper.jpg" },
-    { name: "Tunix", image: "Tunix.jpg" },
-    { name: "Urrea", image: "Urrea.jpg" },
-    { name: "Volteck", image: "Volteck.jpg" },
-    { name: "Xito", image: "xito.jpg" },
+    { name: "3M", image: treesm },
+    { name: "Argos", image: argos },
+    { name: "Armor", image: armor },
+    { name: "Berel", image: berel },
+    { name: "Biolim", image: biolim },
+    { name: "ByP", image: byp },
+    { name: "Coflex", image: coflex },
+    { name: "Cuprum", image: cuprum },
+    { name: "Dewalt", image: dewalt },
+    { name: "Dexter", image: dexter },
+    { name: "Dica", image: dica },
+    { name: "Doal", image: doal },
+    { name: "Eagle Cooper", image: eagleCooper },
+    { name: "Foset", image: foset },
+    { name: "Handy Home", image: handyHome },
+    { name: "Helvex", image: helvex },
+    { name: "Hermex", image: hermex },
+    { name: "Igesa", image: igesa },
+    { name: "Impac", image: impac },
+    { name: "Magg", image: magg },
+    { name: "Makita", image: makita },
+    { name: "Milwaukee", image: milwaukee },
+    { name: "Osram", image: osram },
+    { name: "Phillips", image: phillips },
+    { name: "Rugo", image: rugo },
+    { name: "Sayer", image: sayer },
+    { name: "Square D", image: squareD },
+    { name: "Tecnolite", image: tecnolite },
+    { name: "Truper", image: truper },
+    { name: "Tunix", image: tunix },
+    { name: "Urrea", image: urrea },
+    { name: "Volteck", image: volteck },
+    { name: "Éxito", image: xito },
   ] as BrandItem[],
 };
 
@@ -157,18 +195,18 @@ export const topProductsData = {
   title: "Productos que marcan la diferencia",
   description: "Las marcas más solicitadas por nuestros clientes.",
   items: [
-    { name: "Dewalt", image: "Dewalt.jpg", category: "Herramientas" },
-    { name: "Makita", image: "Makita.jpg", category: "Herramientas" },
-    { name: "Milwaukee", image: "Milwaukee.jpg", category: "Herramientas" },
-    { name: "Truper", image: "Truper.jpg", category: "Herramientas" },
-    { name: "Urrea", image: "Urrea.jpg", category: "Herramientas" },
-    { name: "Berel", image: "Berel.jpg", category: "Pinturas" },
-    { name: "Sayer", image: "Sayer.jpg", category: "Pinturas" },
-    { name: "Tecnolite", image: "Tecnolite.jpg", category: "Iluminación" },
-    { name: "Helvex", image: "Helvex.jpg", category: "Plomería" },
-    { name: "Coflex", image: "Coflex.jpg", category: "Plomería" },
-    { name: "Volteck", image: "Volteck.jpg", category: "Eléctrico" },
-    { name: "3M", image: "3M.jpg", category: "Adhesivos" },
+    { name: "Dewalt", image: dewalt, category: "Herramientas" },
+    { name: "Makita", image: makita, category: "Herramientas" },
+    { name: "Milwaukee", image: milwaukee, category: "Herramientas" },
+    { name: "Truper", image: truper, category: "Herramientas" },
+    { name: "Urrea", image: urrea, category: "Herramientas" },
+    { name: "Berel", image: berel, category: "Pinturas" },
+    { name: "Sayer", image: sayer, category: "Pinturas" },
+    { name: "Tecnolite", image: tecnolite, category: "Iluminación" },
+    { name: "Helvex", image: helvex, category: "Plomería" },
+    { name: "Coflex", image: coflex, category: "Plomería" },
+    { name: "Volteck", image: volteck, category: "Eléctrico" },
+    { name: "3M", image: treesm, category: "Adhesivos" },
   ],
 };
 
@@ -190,7 +228,7 @@ export interface BranchItem {
   schedule: string;
   whatsappHref: string;
   phoneHref: string;
-  images: string[];
+  images: ImageMetadata[];
   mapEmbedUrl?: string;
 }
 
@@ -205,11 +243,9 @@ export const branchesData = {
       schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
       whatsappHref: "https://wa.me/5551234567",
       phoneHref: "tel:+525551234567",
-      images: [
-        "/src/assets/images/sanPedro/Matriz San Pedro.avif",
-        "/src/assets/images/sanPedro/Mostrador matriz 1.avif",
-      ],
-      mapEmbedUrl: "",
+      images: [sanPedro1, sanPedro2],
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.3930147879655!2d-100.39207569999999!3d25.6582635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd82d620c2e7%3A0x67ba20f874031afe!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838839762!5m2!1ses-419!2smx",
     },
     {
       name: "Sucursal San Jemo",
@@ -217,11 +253,9 @@ export const branchesData = {
       schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
       whatsappHref: "https://wa.me/5559876543",
       phoneHref: "tel:+525559876543",
-      images: [
-        "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
-        "/src/assets/images/sanJemo/Mostrador San Jemo 2.avif",
-      ],
-      mapEmbedUrl: "",
+      images: [sanJemo1, sanJemo2],
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.647718136275!2d-100.3767643163235!3d25.682970119132822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629617f953267f%3A0xbd7c1ca0bb5a85c7!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838936546!5m2!1ses-419!2smx",
     },
   ] as BranchItem[],
 };
