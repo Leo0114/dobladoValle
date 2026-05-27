@@ -1,9 +1,10 @@
-// CONTACT PAGE DATA
+import { sanPedro1, sanJemo1 } from "./proveedores";
 
 // ── Hero ──
 export const contactHeroData = {
   tag: "Contacto",
   title: "Hablemos de tu proyecto",
+  image: sanJemo1,
   description:
     "Estamos listos para atenderte. Envíanos un mensaje o visítanos en cualquiera de nuestras sucursales.",
 };
@@ -64,7 +65,7 @@ export interface ContactBranch {
     saturday: string;
     sunday: string;
   };
-  image: string;
+  image: ImageMetadata;
   mapEmbedUrl?: string;
 }
 
@@ -83,7 +84,7 @@ export const contactInfoData = {
         saturday: "Sábado: 8:00 AM - 3:00 PM",
         sunday: "Domingo: Cerrado",
       },
-      image: "/src/assets/images/sanPedro/Matriz San Pedro.avif",
+      image: sanPedro1,
       mapEmbedUrl: "",
     },
     {
@@ -97,7 +98,7 @@ export const contactInfoData = {
         saturday: "Sábado: 8:00 AM - 3:00 PM",
         sunday: "Domingo: Cerrado",
       },
-      image: "/src/assets/images/sanJemo/Sucursal San Jemo.avif",
+      image: sanJemo1,
       mapEmbedUrl: "",
     },
   ] as ContactBranch[],

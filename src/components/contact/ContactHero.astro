@@ -1,11 +1,15 @@
 ---
 import { contactHeroData } from "@/data/contact";
+import { Image } from "astro:assets";
 ---
 
-<section class="relative -mt-[72px] lg:-mt-[84px] flex items-center overflow-hidden" style="min-height: 55vh;">
+<section
+  class="relative -mt-[72px] lg:-mt-[84px] flex items-center overflow-hidden"
+  style="min-height: 75vh;"
+>
   <!-- Background Image -->
   <div class="absolute inset-0">
-    <img
+    <Image
       src={contactHeroData.image}
       alt="Contacto Doblado Valle"
       class="h-full w-full object-cover"
@@ -32,5 +36,8 @@ import { contactHeroData } from "@/data/contact";
     </div>
   </div>
 
-  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sand to-transparent"></div>
+  <div
+    class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sand to-transparent"
+  >
+  </div>
 </section>
