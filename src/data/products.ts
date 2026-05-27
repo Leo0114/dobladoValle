@@ -6,8 +6,7 @@ import type { ImageMetadata } from "astro";
 import { sanPedro1 } from "./proveedores";
 
 const PLACEHOLDER_IMAGE =
-  "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-
+  "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 // ── Hero ──
 export const productsHeroData = {
   tag: "Catálogo",
@@ -33,7 +32,8 @@ export const productCategoriesData = {
   items: [
     {
       name: "Herramientas",
-      description: "Manuales, eléctricas y neumáticas para todo tipo de trabajo.",
+      description:
+        "Manuales, eléctricas y neumáticas para todo tipo de trabajo.",
       image: PLACEHOLDER_IMAGE,
       itemCount: "+500 productos",
     },

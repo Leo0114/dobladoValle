@@ -219,6 +219,7 @@ export const ctaData = {
     label: "Solicitar cotización",
     href: "/contacto",
   },
+  image: sanPedro2,
 };
 
 // ── Branches ──
