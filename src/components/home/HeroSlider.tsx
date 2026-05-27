@@ -16,14 +16,14 @@ export default function HeroSlider() {
 
   if (!mounted) {
     return (
-      <section className="relative -mt-[72px] lg:-mt-[84px] h-[85vh] min-h-[600px] flex items-center overflow-hidden bg-ink">
+      <section className="relative -mt-[72px] lg:-mt-[84px] h-[100dvh] min-h-[600px] max-h-[1200px] flex items-center overflow-hidden bg-ink">
         <div className="absolute inset-0 bg-ink"></div>
       </section>
     );
   }
 
   return (
-    <section className="relative -mt-[72px] lg:-mt-[84px] h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative -mt-[72px] lg:-mt-[84px] h-[100dvh] min-h-[600px] max-h-[1200px] flex items-center overflow-hidden">
       <Swiper
         modules={[Autoplay, EffectFade, Navigation, Pagination]}
         effect="fade"
@@ -63,7 +63,7 @@ export default function HeroSlider() {
             <div className="container-custom relative z-10 flex h-full flex-col justify-center pt-32 pb-20">
               <div className="max-w-3xl">
                 {/* Title */}
-                <h1 className="mb-6 text-white text-balance leading-[1.1] opacity-0 animate-fade-up">
+                <h1 className="mb-6 text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-balance leading-[1.1] opacity-0 animate-fade-up">
                   {slide.title}
                 </h1>
 
