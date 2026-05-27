@@ -2,7 +2,7 @@
 import { coverageData } from "@/data/about";
 ---
 
-<section class="section-padding bg-bone">
+<section class="section-padding bg-bone dark:bg-ash/20">
   <div class="container-custom">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
       <!-- Image -->
@@ -16,13 +16,16 @@ import { coverageData } from "@/data/about";
           />
         </div>
         <!-- Decorative element -->
-        <div class="absolute -bottom-4 -right-4 h-full w-full rounded-2xl border-2 border-primary/10 -z-10"></div>
+        <div
+          class="absolute -bottom-4 -right-4 h-full w-full rounded-2xl border-2 border-primary/10 dark:border-secondary/10 -z-10"
+        >
+        </div>
       </div>
 
       <!-- Content -->
       <div class="order-1 lg:order-2">
         <span
-          class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+          class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-primary dark:text-secondary uppercase"
           style={{ fontFamily: "var(--font-body)" }}
         >
           {coverageData.tag}
@@ -30,7 +33,9 @@ import { coverageData } from "@/data/about";
         <h2 class="mb-5 text-balance">
           {coverageData.title}
         </h2>
-        <p class="mb-8 text-base leading-relaxed text-concrete">
+        <p
+          class="mb-8 text-base leading-relaxed text-concrete dark:text-slate-200"
+        >
           {coverageData.description}
         </p>
 
@@ -39,7 +44,7 @@ import { coverageData } from "@/data/about";
           {
             coverageData.features.map((feature) => (
               <li class="flex items-start gap-3">
-                <div class="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <div class="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
@@ -50,12 +55,12 @@ import { coverageData } from "@/data/about";
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="text-primary"
+                    class="text-primary dark:text-secondary"
                   >
                     <path d="M20 6 9 17l-5-5" />
                   </svg>
                 </div>
-                <span class="text-sm font-medium text-ink/80">
+                <span class="text-sm font-medium text-ink/80 dark:text-slate-400">
                   {feature}
                 </span>
               </li>
