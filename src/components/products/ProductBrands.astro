@@ -1,9 +1,11 @@
 ---
 import SectionTitle from "@/components/shared/SectionTitle.astro";
 import { productBrandsData } from "@/data/products";
+import Brands from "../home/Brands.astro";
 ---
 
-<section class="section-padding bg-bone">
+<Brands />
+<!-- <section class="section-padding bg-bone dark:bg-steel/50">
   <div class="container-custom">
     <SectionTitle
       tag={productBrandsData.tag}
@@ -12,7 +14,7 @@ import { productBrandsData } from "@/data/products";
     />
 
     <!-- Premium brands -->
-    <div class="mb-10">
+<!-- <div class="mb-10">
       <span
         class="mb-6 inline-block text-xs font-medium tracking-[0.2em] text-concrete uppercase"
         style={{ fontFamily: "var(--font-body)" }}
@@ -35,17 +37,19 @@ import { productBrandsData } from "@/data/products";
             ))
         }
       </div>
-    </div>
+    </div> -->
 
-    <!-- Standard brands -->
-    <div>
+<!-- Standard brands -->
+<!-- <div>
       <span
         class="mb-6 inline-block text-xs font-medium tracking-[0.2em] text-concrete uppercase"
         style={{ fontFamily: "var(--font-body)" }}
       >
         Más marcas
       </span>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      <div
+        class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+      >
         {
           productBrandsData.items
             .filter((b) => b.tier === "standard")
@@ -61,6 +65,4 @@ import { productBrandsData } from "@/data/products";
             ))
         }
       </div>
-    </div>
-  </div>
-</section>
+    </div> -->
