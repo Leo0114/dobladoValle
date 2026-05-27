@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import AboutHero from "@/components/about/AboutHero.astro";
+import SharedHero from "@/components/shared/SharedHero.astro";
+import { aboutHeroData } from "@/data/about";
 import History from "@/components/about/History.astro";
 import Values from "@/components/about/Values.astro";
 import Coverage from "@/components/about/Coverage.astro";
@@ -10,7 +11,13 @@ import Coverage from "@/components/about/Coverage.astro";
   title="Acerca de Nosotros — Doblado Valle"
   description="Conoce la historia, valores y misión de Doblado Valle. Más de 30 años siendo el aliado confiable del ramo ferretero en México."
 >
-  <AboutHero />
+  <SharedHero
+    tag={aboutHeroData.tag}
+    title={aboutHeroData.title}
+    description={aboutHeroData.description}
+    image={aboutHeroData.image}
+    fadeClass="from-white dark:from-steel/80"
+  />
   <History />
   <Values />
   <Coverage />

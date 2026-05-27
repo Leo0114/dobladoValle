@@ -2,6 +2,9 @@
 // ABOUT PAGE DATA
 // ═══════════════════════════════════════════
 
+import type { ImageMetadata } from "astro";
+import { sanPedro2 } from "./proveedores";
+
 const PLACEHOLDER_IMAGE =
   "https://images.unsplash.com/photo-1603751178823-dbb4110907a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -11,7 +14,7 @@ export const aboutHeroData = {
   title: "Construyendo confianza desde hace más de 30 años",
   description:
     "Doblado Valle, S.A. de C.V. es una empresa mexicana del ramo ferretero dedicada al suministro de productos para construcción, reparación y mantenimiento.",
-  image: PLACEHOLDER_IMAGE,
+  image: sanPedro2,
 };
 
 // ── History ──

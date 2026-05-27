@@ -2,8 +2,7 @@
 import { privacyHeroData, privacySections } from "@/data/privacy";
 ---
 
-<!-- Hero -->
-<section class="relative -mt-[72px] lg:-mt-[84px] overflow-hidden bg-ink">
+<!-- Hero --><!-- <section class="relative -mt-[72px] lg:-mt-[84px] overflow-hidden bg-ink">
   <div class="container-custom relative z-10 pt-36 pb-16 md:pt-48 md:pb-20">
     <div class="max-w-3xl">
       <h1 class="text-white text-balance mb-4">
@@ -14,7 +13,6 @@ import { privacyHeroData, privacySections } from "@/data/privacy";
       </p>
     </div>
   </div>
-  <!-- Decorative -->
   <div class="absolute top-0 right-0 h-full w-1/3 opacity-5">
     <div
       style={{
@@ -27,10 +25,8 @@ import { privacyHeroData, privacySections } from "@/data/privacy";
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
-</section>
-
-<!-- Content -->
-<section class="section-padding bg-white">
+</section> --><!-- Content -->
+<section class="section-padding bg-white dark:bg-steel/50">
   <div class="container-narrow">
     <div class="prose prose-lg max-w-none">
       {
@@ -38,20 +34,27 @@ import { privacyHeroData, privacySections } from "@/data/privacy";
           <div class={`${index > 0 ? "mt-12" : ""}`}>
             <div class="flex items-start gap-4 mb-4">
               <span
-                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary"
+                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary dark:text-secondary"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {index + 1}
               </span>
               <h2
-                class="text-xl font-semibold text-ink md:text-2xl"
-                style={{ fontFamily: "var(--font-heading)", lineHeight: "1.3", margin: "0" }}
+                class="text-xl font-semibold dark:text-white text-ink md:text-2xl"
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  lineHeight: "1.3",
+                  margin: "0",
+                }}
               >
                 {section.title}
               </h2>
             </div>
             <div class="pl-12">
-              <p class="text-base leading-relaxed text-concrete" style={{ margin: "0" }}>
+              <p
+                class="text-base leading-relaxed dark:text-slate-300 text-concrete"
+                style={{ margin: "0" }}
+              >
                 {section.content}
               </p>
             </div>
@@ -64,25 +67,37 @@ import { privacyHeroData, privacySections } from "@/data/privacy";
     </div>
 
     <!-- Contact for privacy -->
-    <div class="mt-16 rounded-2xl bg-bone p-8 md:p-10 text-center">
+    <div
+      class="mt-16 rounded-2xl bg-bone dark:bg-gray-800/50 p-8 md:p-10 text-center"
+    >
       <h3
-        class="mb-3 text-lg font-semibold text-ink"
+        class="mb-3 text-lg font-semibold text-ink dark:text-white"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         ¿Tienes preguntas sobre tu privacidad?
       </h3>
-      <p class="mb-6 text-sm text-concrete">
+      <p class="mb-6 text-sm text-concrete dark:text-slate-300">
         Escríbenos y con gusto te atenderemos.
       </p>
       <a
         href="mailto:contacto@dobladovalle.com"
-        class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-xs font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
+        class="inline-flex items-center gap-2 rounded-full dark:bg-secondary-dark dark:hover:bg-secondary bg-primary px-6 py-3 text-xs font-semibold tracking-[0.15em] text-ink uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
         style={{ fontFamily: "var(--font-body)" }}
       >
         Enviar correo
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect width="20" height="16" x="2" y="4" rx="2"/>
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
         </svg>
       </a>
     </div>

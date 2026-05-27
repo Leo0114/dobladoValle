@@ -2,16 +2,19 @@
 // PRODUCTS PAGE DATA
 // ═══════════════════════════════════════════
 
+import type { ImageMetadata } from "astro";
+import { sanPedro1 } from "./proveedores";
+
 const PLACEHOLDER_IMAGE =
-  "https://images.unsplash.com/photo-1603751178823-dbb4110907a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 // ── Hero ──
 export const productsHeroData = {
   tag: "Catálogo",
   title: "Nuestros productos",
   description:
-    "Explora nuestra amplia gama de productos para construcción, reparación y mantenimiento. Contamos con las marcas más reconocidas del mercado.",
-  image: PLACEHOLDER_IMAGE,
+    "Descubre nuestra amplia gama de herramientas, materiales eléctricos, pinturas y soluciones para plomería de las marcas más reconocidas a nivel mundial.",
+  image: sanPedro1,
 };
 
 // ── Categories ──

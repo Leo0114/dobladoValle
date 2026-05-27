@@ -1,11 +1,20 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import PrivacyContent from "@/components/privacy/PrivacyContent.astro";
+import SharedHero from "@/components/shared/SharedHero.astro";
+import { sanJemo2 } from "@/data/proveedores";
 ---
 
 <MainLayout
   title="Aviso de Privacidad — Doblado Valle"
   description="Consulta nuestro aviso de privacidad para conocer cómo protegemos tus datos personales."
 >
+  <SharedHero
+    tag="Legal"
+    title="Aviso de Privacidad Actualizado Mayo 2024"
+    description="Consulta cómo protegemos tus datos personales en Doblado Valle."
+    image={sanJemo2}
+    fadeClass="from-white dark:from-steel/80"
+  />
   <PrivacyContent />
 </MainLayout>

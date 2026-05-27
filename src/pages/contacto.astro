@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactHero from "@/components/contact/ContactHero.astro";
+import SharedHero from "@/components/shared/SharedHero.astro";
+import { contactHeroData } from "@/data/contact";
 import ContactForm from "@/components/contact/ContactForm.astro";
 import ContactInfo from "@/components/contact/ContactInfo.astro";
 ---
@@ -9,7 +10,13 @@ import ContactInfo from "@/components/contact/ContactInfo.astro";
   title="Contacto — Doblado Valle"
   description="Contáctanos para cotizaciones, asesoría técnica o información sobre nuestros productos y servicios ferreteros."
 >
-  <ContactHero />
+  <SharedHero
+    tag={contactHeroData.tag}
+    title={contactHeroData.title}
+    description={contactHeroData.description}
+    image={contactHeroData.image}
+    fadeClass="from-sand dark:from-steel/80"
+  />
   <ContactForm />
   <ContactInfo />
 </MainLayout>

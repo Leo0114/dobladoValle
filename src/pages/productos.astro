@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import ProductsHero from "@/components/products/ProductsHero.astro";
+import SharedHero from "@/components/shared/SharedHero.astro";
+import { productsHeroData } from "@/data/products";
 import ProductCategories from "@/components/products/ProductCategories.astro";
 import ProductBrands from "@/components/products/ProductBrands.astro";
 ---
@@ -9,7 +10,13 @@ import ProductBrands from "@/components/products/ProductBrands.astro";
   title="Productos — Doblado Valle"
   description="Explora nuestro catálogo de productos ferreteros: herramientas, pinturas, material eléctrico, plomería, seguridad industrial y más."
 >
-  <ProductsHero />
+  <SharedHero
+    tag={productsHeroData.tag}
+    title={productsHeroData.title}
+    description={productsHeroData.description}
+    image={productsHeroData.image}
+    fadeClass="from-white dark:from-steel/80"
+  />
   <ProductCategories />
   <ProductBrands />
 </MainLayout>
