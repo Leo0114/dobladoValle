@@ -1,5 +1,6 @@
 ---
 import { historyData } from "@/data/about";
+import { Image } from "astro:assets";
 ---
 
 <section class="section-padding bg-white dark:bg-steel/80">
@@ -30,7 +31,7 @@ import { historyData } from "@/data/about";
       <!-- Image + Stats Column -->
       <div>
         <div class="relative mb-8 overflow-hidden rounded-2xl">
-          <img
+          <Image
             src={historyData.image}
             alt="Historia de Doblado Valle"
             class="w-full aspect-[4/3] object-cover"

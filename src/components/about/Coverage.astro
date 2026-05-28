@@ -1,5 +1,6 @@
 ---
 import { coverageData } from "@/data/about";
+import { Image } from "astro:assets";
 ---
 
 <section class="section-padding bg-bone dark:bg-ash/20">
@@ -8,7 +9,7 @@ import { coverageData } from "@/data/about";
       <!-- Image -->
       <div class="relative order-2 lg:order-1">
         <div class="overflow-hidden rounded-2xl">
-          <img
+          <Image
             src={coverageData.image}
             alt="Cobertura de Doblado Valle"
             class="w-full aspect-[4/3] object-cover"

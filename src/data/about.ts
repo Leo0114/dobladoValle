@@ -1,9 +1,7 @@
-// ═══════════════════════════════════════════
-// ABOUT PAGE DATA
-// ═══════════════════════════════════════════
-
-import type { ImageMetadata } from "astro";
 import { sanPedro2 } from "./proveedores";
+
+import image1 from "@/assets/images/sanPedro/matriz4.avif";
+import image2 from "@/assets/images/sanJemo/jemo2.avif";
 
 const PLACEHOLDER_IMAGE =
   "https://images.unsplash.com/photo-1603751178823-dbb4110907a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -26,7 +24,7 @@ export const historyData = {
     "A lo largo de más de tres décadas, hemos crecido de una pequeña ferretería local a una empresa sólida con múltiples sucursales, manteniendo siempre nuestros valores fundamentales de honestidad, calidad y servicio.",
     "Hoy, somos reconocidos como un aliado confiable tanto para profesionales de la construcción como para clientes particulares que buscan las mejores soluciones ferreteras del mercado.",
   ],
-  image: PLACEHOLDER_IMAGE,
+  image: image1,
   stats: [
     { value: "+30", label: "Años de experiencia" },
     { value: "+5,000", label: "Productos en catálogo" },
@@ -117,5 +115,5 @@ export const coverageData = {
     "Inventario amplio y disponibilidad inmediata",
     "Asesoría técnica especializada",
   ],
-  image: PLACEHOLDER_IMAGE,
+  image: image2,
 };
