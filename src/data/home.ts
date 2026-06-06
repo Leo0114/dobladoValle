@@ -51,7 +51,7 @@ export const heroSlides: HeroSlide[] = [
   {
     title: "Tu ferretería de confianza",
     description:
-      "Más de 30 años surtiendo productos de calidad para construcción, reparación y mantenimiento.",
+      "Más de 20 años surtiendo productos de calidad para construcción, reparación y mantenimiento.",
     cta: { label: "Ver productos", href: "/productos" },
     imagePath: "/images/matriz4.avif",
   },

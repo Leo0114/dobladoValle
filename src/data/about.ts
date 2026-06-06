@@ -9,7 +9,7 @@ const PLACEHOLDER_IMAGE =
 // ── Hero ──
 export const aboutHeroData = {
   tag: "Nuestra historia",
-  title: "Construyendo confianza desde hace más de 30 años",
+  title: "Construyendo confianza desde hace más de 20 años",
   description:
     "Doblado Valle, S.A. de C.V. es una empresa mexicana del ramo ferretero dedicada al suministro de productos para construcción, reparación y mantenimiento.",
   image: sanPedro2,
@@ -44,7 +44,7 @@ export const valuesData = {
   tag: "Valores",
   title: "Los pilares que nos definen",
   description:
-    "Nuestros valores son la base de cada decisión y cada relación que construimos.",
+    "Adaptamos nuestros procesos y servicios, para mejorar continuamente la atención a tus necesidades",
   items: [
     {
       icon: "shield",

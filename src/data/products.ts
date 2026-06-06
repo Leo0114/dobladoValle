@@ -28,7 +28,7 @@ export const productCategoriesData = {
   tag: "Categorías",
   title: "Todo lo que necesitas en un solo lugar",
   description:
-    "Desde herramientas profesionales hasta materiales de construcción, tenemos la solución ideal para tu proyecto.",
+    "Desde materiales de construcción hasta herramientas profesionales, tenemos la solución ideal para tu proyecto.",
   items: [
     {
       name: "Herramientas",

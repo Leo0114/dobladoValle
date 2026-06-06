@@ -15,7 +15,7 @@ interface Props {
 
 const {
   title = `${companyInfo.shortName} — ${companyInfo.tagline}`,
-  description = "Empresa mexicana del ramo ferretero dedicada al suministro de productos para construcción, reparación y mantenimiento. Más de 30 años de experiencia.",
+  description = "Empresa mexicana del ramo ferretero dedicada al suministro de productos para construcción, reparación y mantenimiento. Más de 20 años de presencia en el mercado.",
   ogImage = "/horizonLogo.bmp",
 } = Astro.props;
 
@@ -61,7 +61,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script is:inline>
       const setDarkMode = () => {
         const theme = (() => {
-          if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+          ) {
             return localStorage.getItem("theme");
           }
           if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
