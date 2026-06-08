@@ -1,4 +1,4 @@
-import { sanPedro2 } from "./proveedores";
+import { four, sanPedro2, one, six, tres, five } from "./proveedores";
 
 import image1 from "@/assets/images/sanPedro/matriz4.avif";
 import image2 from "@/assets/images/sanJemo/jemo2.avif";
@@ -24,7 +24,7 @@ export const historyData = {
     "A lo largo de más de tres décadas, hemos crecido de una pequeña ferretería local a una empresa sólida con múltiples sucursales, manteniendo siempre nuestros valores fundamentales de honestidad, calidad y servicio.",
     "Hoy, somos reconocidos como un aliado confiable tanto para profesionales de la construcción como para clientes particulares que buscan las mejores soluciones ferreteras del mercado.",
   ],
-  image: image1,
+  image: five,
   stats: [
     { value: "+30", label: "Años de experiencia" },
     { value: "+5,000", label: "Productos en catálogo" },
@@ -115,5 +115,5 @@ export const coverageData = {
     "Inventario amplio y disponibilidad inmediata",
     "Asesoría técnica especializada",
   ],
-  image: image2,
+  image: six,
 };

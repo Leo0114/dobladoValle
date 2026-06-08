@@ -4,6 +4,7 @@ import SharedHero from "@/components/shared/SharedHero.astro";
 import { productsHeroData } from "@/data/products";
 import ProductCategories from "@/components/products/ProductCategories.astro";
 import ProductBrands from "@/components/products/ProductBrands.astro";
+import Disclaimer from "@/components/shared/Disclaimer.astro";
 ---
 
 <MainLayout
@@ -18,5 +19,6 @@ import ProductBrands from "@/components/products/ProductBrands.astro";
     fadeClass="from-white dark:from-steel/80"
   />
   <ProductCategories />
+  <Disclaimer />
   <ProductBrands />
 </MainLayout>

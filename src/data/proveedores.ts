@@ -38,9 +38,24 @@ import sanPedro2 from "@/assets/images/sanPedro/matriz3.avif";
 import sanJemo1 from "@/assets/images/sanJemo/jemo.avif";
 import sanJemo2 from "@/assets/images/sanJemo/jemo2.avif";
 
+import one from "@/assets/images/one.avif";
+import two from "@/assets/images/two.avif";
+import tres from "@/assets/images/tre.avif";
+import four from "@/assets/images/four.avif";
+import five from "@/assets/images/five.avif";
+import six from "@/assets/images/six.avif";
+import seven from "@/assets/images/seven.avif";
+
 export { sanPedro1, sanPedro2, sanJemo1, sanJemo2 };
 
 export {
+  six,
+  seven,
+  one,
+  two,
+  tres,
+  four,
+  five,
   treesm,
   argos,
   armor,

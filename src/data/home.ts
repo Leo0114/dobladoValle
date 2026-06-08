@@ -37,6 +37,11 @@ import {
   urrea,
   volteck,
   xito,
+  one,
+  two,
+  tres,
+  four,
+  five,
 } from "./proveedores";
 
 // ── Hero Slides ──
@@ -53,7 +58,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Más de 20 años surtiendo productos de calidad para construcción, reparación y mantenimiento.",
     cta: { label: "Ver productos", href: "/productos" },
-    imagePath: "/images/matriz4.avif",
+    imagePath: "/images/one.avif",
   },
   {
     title: "Las mejores marcas del mercado",
@@ -67,7 +72,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Visítanos en nuestras sucursales San Pedro y San Jemo. Atención personalizada garantizada.",
     cta: { label: "Ubicaciones", href: "/contacto" },
-    imagePath: "/images/jemo.avif",
+    imagePath: "/images/two.avif",
   },
 ];
 
@@ -189,24 +194,24 @@ export const brandsData = {
   ] as BrandItem[],
 };
 
-// ── Top Products (featured brands for slider) ──
+// ── Top Products  ──
 export const topProductsData = {
   tag: "Destacados",
   title: "Productos que marcan la diferencia",
   description: "Las marcas más solicitadas por nuestros clientes.",
   items: [
-    { name: "Dewalt", image: dewalt, category: "Herramientas" },
-    { name: "Makita", image: makita, category: "Herramientas" },
-    { name: "Milwaukee", image: milwaukee, category: "Herramientas" },
     { name: "Truper", image: truper, category: "Herramientas" },
-    { name: "Urrea", image: urrea, category: "Herramientas" },
     { name: "Berel", image: berel, category: "Pinturas" },
-    { name: "Sayer", image: sayer, category: "Pinturas" },
-    { name: "Tecnolite", image: tecnolite, category: "Iluminación" },
-    { name: "Helvex", image: helvex, category: "Plomería" },
+    { name: "Dewalt", image: dewalt, category: "Herramientas" },
     { name: "Coflex", image: coflex, category: "Plomería" },
-    { name: "Volteck", image: volteck, category: "Eléctrico" },
-    { name: "3M", image: treesm, category: "Adhesivos" },
+    { name: "Tecnolite", image: tecnolite, category: "Iluminación" },
+    { name: "Urrea", image: urrea, category: "Herramientas" },
+    // { name: "Makita", image: makita, category: "Herramientas" },
+    // { name: "Milwaukee", image: milwaukee, category: "Herramientas" },
+    // { name: "Sayer", image: sayer, category: "Pinturas" },
+    // { name: "Helvex", image: helvex, category: "Plomería" },
+    // { name: "Volteck", image: volteck, category: "Eléctrico" },
+    // { name: "3M", image: treesm, category: "Adhesivos" },
   ],
 };
 
@@ -219,7 +224,7 @@ export const ctaData = {
     label: "Solicitar cotización",
     href: "/contacto",
   },
-  image: sanPedro2,
+  image: tres,
 };
 
 // ── Branches ──
