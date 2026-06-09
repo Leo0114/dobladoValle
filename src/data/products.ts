@@ -1,8 +1,3 @@
-// ═══════════════════════════════════════════
-// PRODUCTS PAGE DATA
-// ═══════════════════════════════════════════
-
-import type { ImageMetadata } from "astro";
 import { sanPedro1, seven } from "./proveedores";
 
 const PLACEHOLDER_IMAGE =

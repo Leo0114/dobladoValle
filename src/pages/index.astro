@@ -9,12 +9,14 @@ import HomeCTA from "@/components/home/HomeCTA.astro";
 import Branches from "@/components/home/Branches.astro";
 import QuickContact from "@/components/home/QuickContact.astro";
 import Disclaimer from "@/components/shared/Disclaimer.astro";
+import Ofertas from "@/components/shared/Ofertas.astro";
 ---
 
 <MainLayout>
   <HeroSlider client:load />
   <Services />
   <Categories />
+  <Ofertas client:load />
   <Disclaimer />
   <TopProducts client:load />
   <Brands />

@@ -1,0 +1,60 @@
+---
+import OfertasSlider from "./OfertasSlider";
+
+// Props opcionales para personalizar el encabezado desde la página que lo use
+interface Props {
+  tag?: string;
+  title?: string;
+  description?: string;
+}
+
+const {
+  tag = "Ofertas",
+  title = "Productos en oferta",
+  description = "Aprovecha nuestros precios especiales en una selección de productos. Existencia limitada — visítanos o consúltanos por WhatsApp.",
+} = Astro.props;
+---
+
+<section class="section-padding section-light">
+  <div class="container-custom">
+    {/* Encabezado de sección */}
+    <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div class="max-w-2xl">
+        <span
+          class="mb-4 inline-block text-xs font-semibold tracking-[0.25em] text-secondary uppercase"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {tag}
+        </span>
+        <h2 class="text-balance text-heading">{title}</h2>
+        <p class="mt-4 max-w-xl text-body">{description}</p>
+      </div>
+
+      {/* Badge informativo */}
+      <div
+        class="shrink-0 flex items-center gap-2 self-start rounded-full border border-secondary/20 bg-secondary/5 px-4 py-2 text-xs font-semibold text-secondary dark:border-secondary/30 dark:bg-secondary/10"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" x2="12" y1="8" y2="12"></line>
+          <line x1="12" x2="12.01" y1="16" y2="16"></line>
+        </svg>
+        Precios sujetos a cambio sin previo aviso
+      </div>
+    </div>
+
+    {/* Swiper — client:load para SSR + hydration inmediata */}
+    <OfertasSlider client:load />
+  </div>
+</section>
