@@ -1,0 +1,106 @@
+---
+import SectionTitle from "@/components/shared/SectionTitle.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+const productos = await getCollection("productos");
+const categorias = productos.sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, "es"),
+);
+---
+
+<section class="section-padding bg-white dark:bg-steel/80">
+  <div class="container-custom">
+    <SectionTitle
+      tag="Categorías"
+      title="Todo lo que necesitas en un solo lugar"
+      description="Desde materiales de construcción hasta herramientas profesionales, tenemos la solución ideal para tu proyecto."
+    />
+
+    <div
+      class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      {
+        categorias.map((entry, i) => {
+          const { name, description, itemCount, icon, coverImage } = entry.data;
+          return (
+            <a
+              href={`/productos/${entry.id}`}
+              class="group relative flex flex-col overflow-hidden rounded-2xl bg-bone dark:bg-slate-950/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated"
+            >
+              {/* Imagen */}
+              <div class="relative aspect-video overflow-hidden">
+                <Image
+                  src={coverImage}
+                  alt={name}
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  widths={[400, 800]}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  loading={i < 8 ? "eager" : "lazy"}
+                  transition:name={`product-image-${entry.id}`}
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+
+                {/* Icon + conteo */}
+                <div class="absolute top-3 right-3 flex items-center gap-2">
+                  {icon && (
+                    <span class="text-xl leading-none" aria-hidden="true">
+                      {icon}
+                    </span>
+                  )}
+                  <span class="inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-medium tracking-wider text-white uppercase backdrop-blur-sm">
+                    {itemCount}
+                  </span>
+                </div>
+              </div>
+
+              {/* Contenido */}
+              <div class="flex flex-1 flex-col p-5">
+                <h3
+                  class="mb-1.5 text-base font-semibold text-ink dark:text-white"
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    lineHeight: "1.3",
+                  }}
+                  transition:name={`product-name-${entry.id}`}
+                >
+                  {name}
+                </h3>
+                <p class="flex-1 text-sm leading-relaxed text-concrete dark:text-slate-300">
+                  {description}
+                </p>
+
+                {/* Arrow en hover */}
+                <div
+                  class="mt-4 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-secondary dark:text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1"
+                  style={{ fontFamily: "var(--font-body)" }}
+                  aria-hidden="true"
+                >
+                  Ver categoría
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <>
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Barra de acento inferior */}
+              <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary dark:bg-secondary scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

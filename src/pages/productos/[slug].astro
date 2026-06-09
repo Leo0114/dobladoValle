@@ -1,0 +1,162 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import MainLayout from "@/layouts/MainLayout.astro";
+import Disclaimer from "@/components/shared/Disclaimer.astro";
+import HomeCTA from "@/components/home/HomeCTA.astro";
+
+export const prerender = true;
+
+// ── Generación de rutas estáticas ──
+export async function getStaticPaths() {
+  const entries = await getCollection("productos");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { name, description, itemCount, icon, coverImage } = entry.data;
+---
+
+<MainLayout title={`${name} — Doblado Valle`} description={description}>
+  {/* ── Hero de categoría ── */}
+  <section class="relative overflow-hidden bg-ink">
+    {/* Imagen de fondo con overlay */}
+    <div class="absolute inset-0">
+      <Image
+        src={coverImage}
+        alt={name}
+        class="h-full w-full object-cover opacity-40"
+        transition:name={`product-image-${entry.id}`}
+        widths={[640, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/20"
+      >
+      </div>
+    </div>
+
+    {/* Contenido hero */}
+    <div
+      class="container-custom relative z-10 flex min-h-[55vh] flex-col justify-end pb-16 pt-36"
+    >
+      {/* Breadcrumb */}
+      <nav class="mb-6" aria-label="Breadcrumb">
+        <ol
+          class="flex items-center gap-2 text-xs text-white/50"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          <li>
+            <a href="/" class="hover:text-white transition-colors">Inicio</a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <a href="/productos" class="hover:text-white transition-colors"
+              >Productos</a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li class="text-primary" aria-current="page">{name}</li>
+        </ol>
+      </nav>
+
+      {/* Icon + Tag */}
+      <div class="mb-4 flex items-center gap-3">
+        {
+          icon && (
+            <span class="text-3xl" aria-hidden="true">
+              {icon}
+            </span>
+          )
+        }
+        <span
+          class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-primary"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Categoría
+        </span>
+      </div>
+
+      {/* Título con View Transition */}
+      <h1
+        class="mb-4 max-w-3xl text-balance text-white"
+        transition:name={`product-name-${entry.id}`}
+      >
+        {name}
+      </h1>
+
+      <p
+        class="mb-8 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg"
+        style={{ fontFamily: "var(--font-body)" }}
+      >
+        {description}
+      </p>
+
+      {/* Chips: itemCount + CTA */}
+      <div class="flex flex-wrap items-center gap-4">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m5 11 4-7"></path><path d="m19 11-4-7"></path>
+            <path d="M2 11h20"></path><path
+              d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"
+            ></path>
+            <path d="m9 11 1 9"></path><path d="M14 11l-1 9"></path>
+          </svg>
+          {itemCount}
+        </span>
+
+        <a
+          href="/contacto"
+          class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.1em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Consultar disponibilidad
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ── Contenido Markdown de la categoría ── */}
+  <section class="section-padding section-light">
+    <div class="container-narrow">
+      <article
+        class="prose prose-slate max-w-none dark:prose-invert prose-headings:font-heading prose-headings:tracking-tight prose-a:text-secondary dark:prose-a:text-primary"
+      >
+        <Content />
+      </article>
+    </div>
+  </section>
+
+  {/* ── CTA de disclaimer ── */}
+  <Disclaimer />
+  <HomeCTA />
+</MainLayout>

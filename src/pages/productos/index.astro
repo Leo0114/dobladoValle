@@ -1,10 +1,10 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import SharedHero from "@/components/shared/SharedHero.astro";
-import { productsHeroData } from "@/data/products";
-import ProductCategories from "@/components/products/ProductCategories.astro";
 import ProductBrands from "@/components/products/ProductBrands.astro";
 import Disclaimer from "@/components/shared/Disclaimer.astro";
+import { productsHeroData } from "@/data/products";
+import ProductsCatalog from "@/components/products/ProductsCatalog.astro";
 ---
 
 <MainLayout
@@ -18,7 +18,9 @@ import Disclaimer from "@/components/shared/Disclaimer.astro";
     image={productsHeroData.image}
     fadeClass="from-white dark:from-steel/80"
   />
-  <ProductCategories />
+
+  <ProductsCatalog />
+
   <Disclaimer />
   <ProductBrands />
 </MainLayout>
