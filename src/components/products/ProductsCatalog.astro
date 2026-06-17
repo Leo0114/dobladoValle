@@ -3,6 +3,12 @@ import SectionTitle from "@/components/shared/SectionTitle.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
+interface Props {
+  limitado?: boolean;
+}
+
+const { limitado = false } = Astro.props;
+
 const productos = await getCollection("productos");
 const categorias = productos.sort((a, b) =>
   a.data.name.localeCompare(b.data.name, "es"),
@@ -10,14 +16,47 @@ const categorias = productos.sort((a, b) =>
 
 // Grupos semánticos basados en keywords del nombre
 const grupoMap: Record<string, string[]> = {
-  "Construcción": ["construcción", "concreto", "aditivos", "impermeabilizantes", "acabados en muro", "preparación de superficies", "mallas metálicas"],
-  "Herramientas": ["herramienta", "abrasivos", "escaleras"],
+  Construcción: [
+    "construcción",
+    "concreto",
+    "aditivos",
+    "impermeabilizantes",
+    "acabados en muro",
+    "preparación de superficies",
+    "mallas metálicas",
+  ],
+  Herramientas: ["herramienta", "abrasivos", "escaleras"],
   "Plomería & Gas": ["plomería", "bombas", "gas", "alberca", "quimicos"],
   "Eléctrico & Ilum.": ["eléctrico", "iluminación", "cables", "alambres"],
-  "Pinturas": ["pinturas", "selladores", "acabados para madera", "acondicionadores", "solventes"],
-  "Jardín & Auto": ["jardín", "automotriz", "cuidado automotriz", "insecticidas"],
-  "Seguridad": ["seguridad"],
-  "Hogar": ["baños", "cocinas", "adhesivos", "pegamentos", "chapas", "cerraduras", "jaladeras", "herrajes", "limpieza", "embalaje", "cintas", "cuerdas", "sujeción"],
+  Pinturas: [
+    "pinturas",
+    "selladores",
+    "acabados para madera",
+    "acondicionadores",
+    "solventes",
+  ],
+  "Jardín & Auto": [
+    "jardín",
+    "automotriz",
+    "cuidado automotriz",
+    "insecticidas",
+  ],
+  Seguridad: ["seguridad"],
+  Hogar: [
+    "baños",
+    "cocinas",
+    "adhesivos",
+    "pegamentos",
+    "chapas",
+    "cerraduras",
+    "jaladeras",
+    "herrajes",
+    "limpieza",
+    "embalaje",
+    "cintas",
+    "cuerdas",
+    "sujeción",
+  ],
 };
 
 function getGrupo(name: string): string {
@@ -31,7 +70,8 @@ function getGrupo(name: string): string {
 const todosGrupos = ["Todos", ...Object.keys(grupoMap), "Otros"].filter(
   (g, i, arr) =>
     g === "Todos" ||
-    categorias.some((c) => getGrupo(c.data.name) === g) && arr.indexOf(g) === i,
+    (categorias.some((c) => getGrupo(c.data.name) === g) &&
+      arr.indexOf(g) === i),
 );
 
 const categoriasConGrupo = categorias.map((c) => ({
@@ -49,19 +89,26 @@ const categoriasConGrupo = categorias.map((c) => ({
     />
 
     {/* ── Barra de búsqueda + filtros ── */}
-    <div id="catalog-controls" class="flex flex-col items-center gap-5 mt-10 mb-10 w-full">
-
+    <div
+      id="catalog-controls"
+      class="flex flex-col items-center gap-5 mt-10 mb-10 w-full"
+    >
       {/* Buscador */}
       <div class="relative w-full group/search">
         {/* Icono lupa */}
         <svg
           class="absolute left-5 top-1/2 -translate-y-1/2 size-[22px] text-slate pointer-events-none transition-colors duration-200 group-focus-within/search:text-primary dark:group-focus-within/search:text-secondary"
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
           aria-hidden="true"
         >
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.3-4.3"/>
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
         </svg>
 
         {/* Input */}
@@ -71,8 +118,7 @@ const categoriasConGrupo = categorias.map((c) => ({
           placeholder="Buscar categoría… ej: herramienta, pintura, plomería"
           autocomplete="off"
           aria-label="Buscar categorías de productos"
-          class="
-            w-full rounded-full border-2 border-transparent
+          class="w-full rounded-full border-2 border-transparent
             bg-bone dark:bg-white/8
             text-ink dark:text-slate-100
             placeholder:text-slate dark:placeholder:text-white/35
@@ -84,8 +130,7 @@ const categoriasConGrupo = categorias.map((c) => ({
             focus:border-primary focus:bg-white focus:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_0_0_4px_color-mix(in_srgb,theme(colors.primary)_15%,transparent)]
             dark:border-white/12
             dark:focus:border-secondary dark:focus:bg-white/13 dark:focus:shadow-[0_2px_12px_rgba(0,0,0,0.25),0_0_0_4px_color-mix(in_srgb,theme(colors.secondary)_22%,transparent)]
-            [appearance:none] [-webkit-appearance:none] [&::-webkit-search-cancel-button]:hidden
-          "
+            [appearance:none] [-webkit-appearance:none] [&::-webkit-search-cancel-button]:hidden"
         />
 
         {/* Botón limpiar */}
@@ -93,18 +138,26 @@ const categoriasConGrupo = categorias.map((c) => ({
           id="search-clear"
           aria-label="Limpiar búsqueda"
           hidden
-          class="
-            absolute right-4 top-1/2 -translate-y-1/2
+          class="absolute right-4 top-1/2 -translate-y-1/2
             flex items-center justify-center
             size-8 rounded-full border-0 p-0
             bg-slate text-white cursor-pointer
             transition-[background-color,transform] duration-150
             hover:bg-ink hover:-translate-y-1/2 hover:scale-110
-            dark:bg-white/25 dark:hover:bg-white/45
-          "
+            dark:bg-white/25 dark:hover:bg-white/45"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
           </svg>
         </button>
       </div>
@@ -116,22 +169,24 @@ const categoriasConGrupo = categorias.map((c) => ({
         aria-label="Filtrar por grupo"
         class="flex flex-wrap justify-center gap-2 w-full"
       >
-        {todosGrupos.map((g) => (
-          <button
-            class={[
-              "inline-flex items-center whitespace-nowrap rounded-full border px-[1.1rem] py-[0.4rem]",
-              "text-[0.825rem] font-medium tracking-[0.01em] cursor-pointer",
-              "transition-all duration-200",
-              g === "Todos"
-                ? "chip chip--active bg-primary border-primary text-white shadow-[0_2px_8px_color-mix(in_srgb,theme(colors.primary)_40%,transparent)] dark:bg-secondary dark:border-secondary dark:text-ink dark:shadow-[0_2px_10px_color-mix(in_srgb,theme(colors.secondary)_45%,transparent)]"
-                : "chip bg-bone border-black/10 text-concrete hover:-translate-y-px hover:border-primary hover:text-primary hover:bg-primary/8 dark:bg-white/7 dark:border-white/12 dark:text-slate dark:hover:border-secondary dark:hover:text-secondary dark:hover:bg-secondary/12",
-            ].join(" ")}
-            data-group={g}
-            aria-pressed={g === "Todos" ? "true" : "false"}
-          >
-            {g}
-          </button>
-        ))}
+        {
+          todosGrupos.map((g) => (
+            <button
+              class={[
+                "inline-flex items-center whitespace-nowrap rounded-full border px-[1.1rem] py-[0.4rem]",
+                "text-[0.825rem] font-medium tracking-[0.01em] cursor-pointer",
+                "transition-all duration-200",
+                g === "Todos"
+                  ? "chip chip--active bg-primary border-primary text-white shadow-[0_2px_8px_color-mix(in_srgb,theme(colors.primary)_40%,transparent)] dark:bg-secondary dark:border-secondary dark:text-ink dark:shadow-[0_2px_10px_color-mix(in_srgb,theme(colors.secondary)_45%,transparent)]"
+                  : "chip bg-bone border-black/10 text-concrete hover:-translate-y-px hover:border-primary hover:text-primary hover:bg-primary/8 dark:bg-white/7 dark:border-white/12 dark:text-slate dark:hover:border-secondary dark:hover:text-secondary dark:hover:bg-secondary/12",
+              ].join(" ")}
+              data-group={g}
+              aria-pressed={g === "Todos" ? "true" : "false"}
+            >
+              {g}
+            </button>
+          ))
+        }
       </div>
 
       {/* Contador */}
@@ -159,6 +214,7 @@ const categoriasConGrupo = categorias.map((c) => ({
               data-name={name.toLowerCase()}
               data-desc={description.toLowerCase()}
               data-group={entry.grupo}
+              data-limitada={limitado && i >= 8 ? "" : undefined}
             >
               {/* Imagen */}
               <div class="relative aspect-video overflow-hidden">
@@ -236,14 +292,74 @@ const categoriasConGrupo = categorias.map((c) => ({
       }
     </div>
 
+    {/* Botón "Mostrar más" — solo cuando limitado=true */}
+    {
+      limitado && (
+        <div id="mostrar-mas-wrapper" class="mt-8 flex justify-center">
+          <button
+            id="btn-mostrar-mas"
+            class="
+            inline-flex items-center gap-2 rounded-full
+            border-2 border-primary dark:border-secondary
+            px-8 py-3 text-sm font-semibold tracking-wide
+            text-primary dark:text-secondary
+            transition-all duration-200
+            hover:bg-primary hover:text-white
+            hover:shadow-[0_4px_16px_color-mix(in_srgb,theme(colors.primary)_35%,transparent)]
+            dark:hover:bg-secondary dark:hover:text-ink
+            dark:hover:shadow-[0_4px_16px_color-mix(in_srgb,theme(colors.secondary)_35%,transparent)]
+            hover:-translate-y-0.5
+            focus-visible:outline-none focus-visible:ring-2
+            focus-visible:ring-primary dark:focus-visible:ring-secondary
+          "
+            aria-expanded="false"
+            aria-controls="catalog-grid"
+          >
+            <span id="btn-mostrar-mas-label">Ver todas las categorías</span>
+            <svg
+              id="btn-mostrar-mas-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              class="transition-transform duration-300"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      )
+    }
+
     {/* Estado vacío */}
     <div
       id="empty-state"
       hidden
       class="flex flex-col items-center justify-center gap-3 py-16 px-4 text-center text-slate dark:text-white/35"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      <p class="text-base font-body">No encontramos resultados para tu búsqueda.</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        ><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"
+        ></path></svg
+      >
+      <p class="text-base font-body">
+        No encontramos resultados para tu búsqueda.
+      </p>
       <button
         id="reset-filters"
         class="chip chip--active mt-2 inline-flex items-center rounded-full px-[1.1rem] py-[0.4rem] text-[0.825rem] font-medium cursor-pointer bg-primary border border-primary text-white dark:bg-secondary dark:border-secondary dark:text-ink"
@@ -262,31 +378,53 @@ const categoriasConGrupo = categorias.map((c) => ({
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: #fff;
-    box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 40%, transparent);
+    box-shadow: 0 2px 8px
+      color-mix(in srgb, var(--color-primary) 40%, transparent);
   }
 
   :is(.dark) .chip.chip--active {
     background-color: var(--color-secondary);
     border-color: var(--color-secondary);
     color: #111;
-    box-shadow: 0 2px 10px color-mix(in srgb, var(--color-secondary) 45%, transparent);
+    box-shadow: 0 2px 10px
+      color-mix(in srgb, var(--color-secondary) 45%, transparent);
   }
 
-  /* Cards ocultas por filtro */
+  /* Cards ocultas por filtro JS */
   .catalog-card[hidden] {
     display: none;
+  }
+
+  /* Cards limitadas (prop limitado=true) — ocultas por defecto hasta "Mostrar más" */
+  .catalog-card[data-limitada] {
+    display: none;
+  }
+
+  /* Cuando el grid está expandido, se muestran todas */
+  #catalog-grid.is-expanded .catalog-card[data-limitada] {
+    display: flex;
   }
 </style>
 
 <script>
   (function () {
-    const searchInput = document.getElementById("catalog-search") as HTMLInputElement | null;
-    const clearBtn = document.getElementById("search-clear") as HTMLButtonElement | null;
-    const chips = document.querySelectorAll<HTMLButtonElement>("#filter-chips .chip");
+    const searchInput = document.getElementById(
+      "catalog-search",
+    ) as HTMLInputElement | null;
+    const clearBtn = document.getElementById(
+      "search-clear",
+    ) as HTMLButtonElement | null;
+    const chips = document.querySelectorAll<HTMLButtonElement>(
+      "#filter-chips .chip",
+    );
     const cards = document.querySelectorAll<HTMLElement>(".catalog-card");
     const resultsNum = document.getElementById("results-num");
-    const emptyState = document.getElementById("empty-state") as HTMLElement | null;
-    const resetBtn = document.getElementById("reset-filters") as HTMLButtonElement | null;
+    const emptyState = document.getElementById(
+      "empty-state",
+    ) as HTMLElement | null;
+    const resetBtn = document.getElementById(
+      "reset-filters",
+    ) as HTMLButtonElement | null;
 
     let activeGroup = "Todos";
     let searchQuery = "";
@@ -354,6 +492,31 @@ const categoriasConGrupo = categorias.map((c) => ({
 
         applyFilters();
       });
+    });
+
+    // Botón Mostrar más
+    const btnMostrarMas = document.getElementById(
+      "btn-mostrar-mas",
+    ) as HTMLButtonElement | null;
+    const mostrarMasWrapper = document.getElementById("mostrar-mas-wrapper");
+    const catalogGrid = document.getElementById("catalog-grid");
+    const btnLabel = document.getElementById("btn-mostrar-mas-label");
+    const btnIcon = document.getElementById("btn-mostrar-mas-icon");
+
+    let expandido = false;
+
+    btnMostrarMas?.addEventListener("click", () => {
+      expandido = !expandido;
+      catalogGrid?.classList.toggle("is-expanded", expandido);
+      btnMostrarMas.setAttribute("aria-expanded", String(expandido));
+      if (btnLabel)
+        btnLabel.textContent = expandido
+          ? "Ver menos"
+          : "Ver todas las categorías";
+      if (btnIcon) btnIcon.style.transform = expandido ? "rotate(180deg)" : "";
+      // Cuando se expande y hay un filtro activo, aplicar los filtros
+      // sobre las cards recién visibles
+      if (expandido) applyFilters();
     });
 
     // Reset desde empty state
