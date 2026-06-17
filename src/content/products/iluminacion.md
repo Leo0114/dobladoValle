@@ -1,22 +1,17 @@
 ---
-name: "Iluminación"
-description: "Focos LED, luminarias, lámparas y accesorios para iluminar cualquier espacio con eficiencia energética."
-itemCount: "+250 productos"
-icon: "💡"
+name: "Productos para la iluminación doméstica, industrial y comercial"
+description: "Luminarias, focos, reflectores y cintas led para todo espacio."
+itemCount: "5 productos"
+icon: "🔦"
 coverImage: "../images/ilumi.webp"
 ---
 
-Ilumina tus espacios con tecnología de vanguardia. Contamos con soluciones de iluminación eficientes para hogar, oficinas, comercios y obra.
+Explora nuestra línea de productos en la categoría de **Productos para la iluminación doméstica, industrial y comercial**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.
 
 ## Lo que encontrarás
 
-- Focos LED de diferentes watts y temperaturas de color
-- Lámparas fluorescentes y de bajo consumo
-- Luminarias para exterior: reflectores, faroles, postes
-- Tiras LED y sistemas de iluminación decorativa
-- Plafones, downlights y spots empotrados
-- Balastros, drivers y accesorios de instalación
-
-## Marcas disponibles
-
-Tecnolite, Volteck, GE, Philips, Sylvania y más.
+- Focos
+- Luminarias
+- Mangueras y cintas led
+- Plafones p/muro y techo
+- Reflectores

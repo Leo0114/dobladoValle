@@ -1,23 +1,22 @@
 ---
-name: "Seguridad Industrial"
-description: "Equipos de protección personal y señalización para mantener tus obras y espacios de trabajo seguros y en norma."
-itemCount: "+150 productos"
-icon: "🦺"
+name: "Productos de seguridad para la construcción y la industria"
+description: "Arneses, cascos, chalecos y equipo de protección personal para tu seguridad."
+itemCount: "10 productos"
+icon: "👷"
 coverImage: "../images/seguridadI.avif"
 ---
 
-La seguridad no es opcional. Tenemos todo el equipo de protección personal (EPP) y señalización necesarios para cumplir con las normas NOM y mantener seguros a tus trabajadores.
+Explora nuestra línea de productos en la categoría de **Productos de seguridad para la construcción y la industria**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.
 
 ## Lo que encontrarás
 
-- Cascos de seguridad tipo I y II
-- Lentes de seguridad, caretas y protectores faciales
-- Guantes de látex, nitrilo, carnaza y anticorte
-- Botas industriales con casquillo de acero
-- Fajas lumbares y arneses para trabajos en altura
-- Señalización: conos, mallas, letreros de seguridad
-- Tapones auditivos y orejeras
-
-## Marcas disponibles
-
-3M, Pretul, Truper, MSA, Honeywell y más.
+- Arneses y líneas de vida
+- Botas, zapatos y cubrezapatos
+- Caretas, cascos, googles y lentes
+- Chalecos, orejeras y rodilleras
+- Cintas de señalización y antiderrapantes
+- Conos, mallas y postes
+- Cubrebocas y respiradores
+- Guantes
+- Lonas y toldos
+- Overoles de cuerpo completo
