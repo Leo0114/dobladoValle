@@ -22,10 +22,16 @@ const currentPath = Astro.url.pathname;
         aria-label={companyInfo.shortName}
       >
         <img
-          src="/horizonLogo.bmp"
+          src="/darkLogo.png"
           id="logo"
           alt={companyInfo.shortName}
-          class="h-10 w-auto md:h-12 object-contain"
+          class="h-10 w-auto md:h-14 object-contain hidden dark:block"
+        />
+        <img
+          src="/lightLogo.png"
+          id="logo2"
+          alt={companyInfo.shortName}
+          class="h-10 w-auto md:h-14 object-contain dark:hidden"
         />
       </a>
 

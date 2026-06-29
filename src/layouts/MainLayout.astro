@@ -16,7 +16,7 @@ interface Props {
 const {
   title = `${companyInfo.shortName} — ${companyInfo.tagline}`,
   description = "Empresa mexicana del ramo ferretero dedicada al suministro de productos para construcción, reparación y mantenimiento. Más de 20 años de presencia en el mercado.",
-  ogImage = "/horizonLogo.bmp",
+  ogImage = "/darkLogo.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +27,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/bmp" href="/vertiLogo.bmp" />
+    <link rel="icon" type="image/x-icon" href="/icon.ico" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
