@@ -21,13 +21,13 @@ export const historyData = {
   title: "Una historia de compromiso y crecimiento",
   paragraphs: [
     "Doblado Valle nació con la visión de ser el proveedor ferretero de referencia en México, ofreciendo productos de la más alta calidad y un servicio personalizado que se adapta a las necesidades de cada cliente.",
-    "A lo largo de más de tres décadas, hemos crecido de una pequeña ferretería local a una empresa sólida con múltiples sucursales, manteniendo siempre nuestros valores fundamentales de honestidad, calidad y servicio.",
+    "A lo largo de más de tres décadas, hemos crecido de una pequeña ferretería local a una empresa sólida con sucursales, manteniendo siempre nuestros valores fundamentales de honestidad, calidad y servicio.",
     "Hoy, somos reconocidos como un aliado confiable tanto para profesionales de la construcción como para clientes particulares que buscan las mejores soluciones ferreteras del mercado.",
   ],
   image: five,
   stats: [
-    { value: "+30", label: "Años de experiencia" },
-    { value: "+5,000", label: "Productos en catálogo" },
+    { value: "+20", label: "Años de experiencia" },
+    { value: "+25,000", label: "Productos en catálogo" },
     { value: "+50", label: "Marcas aliadas" },
     { value: "+10,000", label: "Clientes satisfechos" },
   ],
@@ -106,9 +106,9 @@ export const coverageData = {
   tag: "Cobertura",
   title: "Alcance y presencia",
   description:
-    "Con múltiples sucursales estratégicamente ubicadas y servicio a domicilio, llevamos nuestros productos a donde los necesites.",
+    "Con sucursales estratégicamente ubicadas y servicio a domicilio, llevamos nuestros productos a donde los necesites.",
   features: [
-    "Múltiples sucursales en zona metropolitana",
+    "Sucursales en zona metropolitana",
     "Servicio de entrega a domicilio",
     "Atención a clientes industriales y comerciales",
     "Alianzas con las principales marcas del mercado",

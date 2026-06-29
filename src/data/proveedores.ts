@@ -46,7 +46,30 @@ import five from "@/assets/images/five.avif";
 import six from "@/assets/images/six.avif";
 import seven from "@/assets/images/seven.avif";
 
-export { sanPedro1, sanPedro2, sanJemo1, sanJemo2 };
+// ofertaas images
+import uno from "@/assets/images/ofertaas/one.webp";
+import dos from "@/assets/images/ofertaas/dos.jpg";
+import tri from "@/assets/images/ofertaas/tres.jpg";
+import cuatro from "@/assets/images/ofertaas/cuatro.jpg";
+import cinco from "@/assets/images/ofertaas/cinco.webp";
+import seis from "@/assets/images/ofertaas/seis.jpeg";
+import siete from "@/assets/images/ofertaas/seven.webp";
+import ocho from "@/assets/images/ofertaas/ocho.webp";
+
+export {
+  sanPedro1,
+  sanPedro2,
+  sanJemo1,
+  sanJemo2,
+  uno,
+  dos,
+  tri,
+  cuatro,
+  cinco,
+  seis,
+  siete,
+  ocho,
+};
 
 export {
   six,

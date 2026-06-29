@@ -12,6 +12,7 @@ Explora nuestra línea de productos en la categoría de **Adhesivos y pegamentos
 
 - De contacto
 - Epóxicos
+- Adhesivos en aerosol
 - Escolares, duela y madera
 - Instantáneos
 - Para PVC hidráulico y sanitario, y CPVC

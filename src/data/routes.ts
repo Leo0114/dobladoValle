@@ -35,6 +35,6 @@ export const companyInfo = {
   tagline: "Soluciones ferreteras para construcción e industria",
   whatsappHref: "https://wa.me/5551234567",
   phoneHref: "tel:+525551234567",
-  email: "contacto@dobladovalle.com",
+  email: "ventas@dobladovalle.com",
   foundedYear: 1990,
 };

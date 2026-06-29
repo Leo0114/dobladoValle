@@ -76,9 +76,9 @@ export const contactInfoData = {
     {
       name: "Matriz San Pedro",
       address: "San Pedro, Nuevo León",
-      whatsappHref: "https://wa.me/5551234567",
-      phoneHref: "tel:+525551234567",
-      email: "sanpedro@dobladovalle.com",
+      whatsappHref: "https://wa.me/8126206906",
+      phoneHref: "tel:+528126206906",
+      email: "ventas@dobladovalle.com",
       schedule: {
         weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
         saturday: "Sábado: 8:00 AM - 3:00 PM",
@@ -90,9 +90,9 @@ export const contactInfoData = {
     {
       name: "Sucursal San Jemo",
       address: "San Jerónimo, Nuevo León",
-      whatsappHref: "https://wa.me/5559876543",
-      phoneHref: "tel:+525559876543",
-      email: "sanjemo@dobladovalle.com",
+      whatsappHref: "https://wa.me/8119936710",
+      phoneHref: "tel:+528119936710",
+      email: "ventas@dobladovalle.com",
       schedule: {
         weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
         saturday: "Sábado: 8:00 AM - 3:00 PM",

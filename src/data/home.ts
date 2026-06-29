@@ -63,7 +63,7 @@ export const heroSlides: HeroSlide[] = [
   {
     title: "Las mejores marcas del mercado",
     description:
-      "Trabajamos con Dewalt, Makita, Milwaukee, Truper, Urrea y muchas más.",
+      "Trabajamos con Berel, Dewalt, Makita, Milwaukee, Truper, Urrea y muchas más.",
     cta: { label: "Conocer marcas", href: "/productos" },
     imagePath: "/images/matriz2.avif",
   },
@@ -247,8 +247,8 @@ export const branchesData = {
       name: "Matriz San Pedro",
       address: "San Pedro, Nuevo León",
       schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
-      whatsappHref: "https://wa.me/5551234567",
-      phoneHref: "tel:+525551234567",
+      whatsappHref: "https://wa.me/8126206906",
+      phoneHref: "tel:+528126206906",
       images: [sanPedro1, sanPedro2],
       mapEmbedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.3930147879655!2d-100.39207569999999!3d25.6582635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd82d620c2e7%3A0x67ba20f874031afe!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838839762!5m2!1ses-419!2smx",
@@ -257,8 +257,8 @@ export const branchesData = {
       name: "Sucursal San Jemo",
       address: "San Jerónimo, Nuevo León",
       schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
-      whatsappHref: "https://wa.me/5559876543",
-      phoneHref: "tel:+525559876543",
+      whatsappHref: "https://wa.me/8119936710",
+      phoneHref: "tel:+528119936710",
       images: [sanJemo1, sanJemo2],
       mapEmbedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.647718136275!2d-100.3767643163235!3d25.682970119132822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629617f953267f%3A0xbd7c1ca0bb5a85c7!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838936546!5m2!1ses-419!2smx",
@@ -288,7 +288,7 @@ export const quickContactData = {
       icon: "email",
       label: "Email",
       action: "Envíanos un correo",
-      href: "mailto:contacto@dobladovalle.com",
+      href: "mailto:ventas@dobladovalle.com",
     },
   ],
 };
