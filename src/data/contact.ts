@@ -135,6 +135,6 @@ export const ServicesData = [
     title: "Servicio a domicilio",
     icon: "fa6-solid:truck-fast",
     description:
-      "Si no puedes recoger tu pedido en nuestras sucursales podemos apoyarte con su envío a domicilio en las áreas metropolitanas de Monterrey y San Pedro.",
+      "Si no puedes recoger tu pedido en nuestras sucursales podemos apoyarte con su envío a domicilio en las áreas metropolitanas de Monterrey y San Pedro, o incluso en algunos de sus municipios conurbados. Pregúntanos por esta opción.",
   },
 ];
