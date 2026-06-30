@@ -1,7 +1,3 @@
-// ═══════════════════════════════════════════
-// PRIVACY PAGE DATA
-// ═══════════════════════════════════════════
-
 export const privacyHeroData = {
   title: "Aviso de Privacidad",
   lastUpdated: "Mayo 2024",
