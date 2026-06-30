@@ -4,6 +4,7 @@ import SharedHero from "@/components/shared/SharedHero.astro";
 import { contactHeroData } from "@/data/contact";
 import ContactForm from "@/components/contact/ContactForm.astro";
 import ContactInfo from "@/components/contact/ContactInfo.astro";
+import ServicesSection from "@/components/contact/ServicesSection.astro";
 ---
 
 <MainLayout
@@ -17,6 +18,7 @@ import ContactInfo from "@/components/contact/ContactInfo.astro";
     image={contactHeroData.image}
     fadeClass="from-sand dark:from-steel/80"
   />
+  <ServicesSection />
   <ContactForm />
   <ContactInfo />
 </MainLayout>

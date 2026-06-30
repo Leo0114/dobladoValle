@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
+import "swiper/css/pagination";
 import { ofertasData } from "@/data/ofertas";
 
 export default function OfertasSlider() {
@@ -26,8 +26,7 @@ export default function OfertasSlider() {
   return (
     <div className="relative p-4 rounded-lg bg-secondary w-full overflow-hidden shadow-xl">
       <Swiper
-        modules={[Autoplay, Navigation, Pagination, EffectFade]}
-        effect="fade"
+        modules={[Autoplay, Navigation, Pagination]}
         slidesPerView={1}
         speed={600}
         autoplay={{
@@ -81,7 +80,7 @@ export default function OfertasSlider() {
 
                 {/* Descripción — 2 líneas */}
                 <p
-                  className="line-clamp-2 max-w-sm text-sm leading-relaxed"
+                  className="max-w-sm text-sm leading-relaxed"
                   style={{
                     color: "rgba(255,255,255,0.70)",
                     fontFamily: "var(--font-body)",

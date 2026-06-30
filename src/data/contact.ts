@@ -103,3 +103,38 @@ export const contactInfoData = {
     },
   ] as ContactBranch[],
 };
+
+// Contacto texto nuevo
+
+export const ServicesData = [
+  {
+    title: "Preparación de pinturas",
+    icon: "fa6-solid:paint-roller",
+    description:
+      "Como distribuidores de productos de la marca Berel, contamos con el equipamiento para la preparación y mezclados de pinturas vinílicas, acrílicas y esmaltes, en los colores y tonos que deseas para tus proyectos.",
+  },
+  {
+    title: "Duplicación de llaves",
+    icon: "fa6-solid:key",
+    description:
+      "Contamos con la maquinaria y las forjas más comunes para la duplicación de llaves de chapas, cerraduras y candados.",
+  },
+  {
+    title: "Elaboración de niples y roscas",
+    icon: "fa6-solid:wrench",
+    description:
+      "¿Necesitas un niple de un largo específico o elaborar una rosca? Aquí podemos fabricarlo con la tubería que requieras o hacer las roscas a tubos desde 1/2 hasta 2” de diámetro.",
+  },
+  {
+    title: "Reparación de mosquiteros",
+    icon: "fa6-solid:hammer",
+    description:
+      "Podemos ayudarte a sustituir la tela de tus mosquiteros. Aquí las reparamos; contamos con telas de fibra de vidrio o metálicas de diferentes colores y anchos, así como con complementos de vinil y herramienta para su montaje.",
+  },
+  {
+    title: "Servicio a domicilio",
+    icon: "fa6-solid:truck-fast",
+    description:
+      "Si no puedes recoger tu pedido en nuestras sucursales podemos apoyarte con su envío a domicilio en las áreas metropolitanas de Monterrey y San Pedro.",
+  },
+];

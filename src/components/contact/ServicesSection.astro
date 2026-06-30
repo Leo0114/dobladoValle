@@ -1,0 +1,37 @@
+---
+import { ServicesData } from "@/data/contact";
+import SectionTitle from "../shared/SectionTitle.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="pt-20 bg-sand dark:bg-steel/50">
+  <div class="container-custom">
+    <SectionTitle
+      title="Servicios"
+      description="En Doblado Valle complementamos nuestra distribución de materiales con una serie de servicios especializados para facilitar tus proyectos."
+    />
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        ServicesData.map((service) => (
+          <div
+            class="group rounded-2xl bg-white dark:bg-slate-950/10 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-ink">
+              <Icon name={service.icon} class="text-2xl" />
+            </div>
+            <h3
+              class="mb-3 text-base font-semibold text-ink dark:text-slate-100"
+              style={{ fontFamily: "var(--font-heading)", lineHeight: "1.3" }}
+            >
+              {service.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-concrete dark:text-slate-300">
+              {service.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
