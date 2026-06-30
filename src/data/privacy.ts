@@ -12,7 +12,7 @@ export const privacySections: PrivacySection[] = [
   {
     title: "Identidad y domicilio del responsable",
     content:
-      'Doblado Valle, S.A. de C.V. (en adelante "Doblado Valle"), con domicilio en Av. Ejemplo #123, Col. Centro, Ciudad de México, CP 06000, es responsable del tratamiento de sus datos personales.',
+      'Doblado Valle, S.A. de C.V. (en adelante "Doblado Valle"), con domicilio en Av. José Vasconcelos Oriente No. 1400, col. Palo Blanco, C.P. 66236, San Pedro Garza García, Nuevo León, México, es responsable del tratamiento de sus datos personales.',
   },
   {
     title: "Datos personales que recabamos",
@@ -32,7 +32,7 @@ export const privacySections: PrivacySection[] = [
   {
     title: "Medios para ejercer derechos ARCO",
     content:
-      "Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación). Para ejercer cualquiera de los derechos ARCO, puede enviar su solicitud a ventas@dobladovalle.com.",
+      "Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación). Para ejercer cualquiera de los derechos ARCO, puede enviar su solicitud al correo: alberto.gomez@dobladovalle.com.",
   },
   {
     title: "Uso de cookies y tecnologías de rastreo",
@@ -47,6 +47,6 @@ export const privacySections: PrivacySection[] = [
   {
     title: "Consentimiento",
     content:
-      "Si usted no manifiesta su oposición para que sus datos personales sean transferidos, se entenderá que ha otorgado su consentimiento para ello. Para mayor información sobre el tratamiento de sus datos personales, puede contactarnos en ventas@dobladovalle.com o al teléfono +52 (555) 123-4567.",
+      "Si usted no manifiesta su oposición para que sus datos personales sean transferidos, se entenderá que ha otorgado su consentimiento para ello. Para mayor información sobre el tratamiento de sus datos personales, puede contactarnos al correo alberto.gomez@dobladovalle.com o al teléfono +52 (81) 8338-3848 o 1620.",
   },
 ];
