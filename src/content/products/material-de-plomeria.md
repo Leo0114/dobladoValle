@@ -4,6 +4,14 @@ description: "Tuberías, válvulas, empaques y paquetes de instalación hidrául
 itemCount: "9 productos"
 icon: "🚰"
 coverImage: "../images/materialesPromeria.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Plomería & Gas"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
 ---
 
 Explora nuestra línea de productos en la categoría de **Material de plomería**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

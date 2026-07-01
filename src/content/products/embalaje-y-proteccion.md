@@ -4,6 +4,14 @@ description: "Materiales para proteger tus objetos durante traslados o almacenaj
 itemCount: "6 productos"
 icon: "🛡️"
 coverImage: "../images/embalaje.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Acabados"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Embalaje, montaje y protección de superficies**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

@@ -4,6 +4,12 @@ description: "Potencia y precisión para tus proyectos con herramientas eléctri
 itemCount: "9 productos"
 icon: "⚡"
 coverImage: "../images/herraelectric.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
 ---
 
 Explora nuestra línea de productos en la categoría de **Herramienta eléctrica, inalámbrica y neumática**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

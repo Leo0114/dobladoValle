@@ -4,6 +4,12 @@ description: "Bisagras, correderas y accesorios para muebles y puertas."
 itemCount: "5 productos"
 icon: "🚪"
 coverImage: "../images/jaladeras.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
 ---
 
 Explora nuestra línea de productos en la categoría de **Bisagras, correderas y accesorios para muebles y puertas**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

@@ -4,6 +4,11 @@ description: "Cloro, algicidas y equipo para el cuidado de tu alberca."
 itemCount: "6 productos"
 icon: "🏊"
 coverImage: "../images/quimicosAlberca.avif"
+
+category:
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
 ---
 
 Explora nuestra línea de productos en la categoría de **Químicos y accesorios para el mantenimiento de albercas**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

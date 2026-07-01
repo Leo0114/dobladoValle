@@ -14,70 +14,18 @@ const categorias = productos.sort((a, b) =>
   a.data.name.localeCompare(b.data.name, "es"),
 );
 
-// Grupos semánticos basados en keywords del nombre
-const grupoMap: Record<string, string[]> = {
-  Construcción: [
-    "construcción",
-    "concreto",
-    "aditivos",
-    "impermeabilizantes",
-    "acabados en muro",
-    "preparación de superficies",
-    "mallas metálicas",
-  ],
-  Herramientas: ["herramienta", "abrasivos", "escaleras"],
-  "Plomería & Gas": ["plomería", "bombas", "gas", "alberca", "quimicos"],
-  "Eléctrico & Ilum.": ["eléctrico", "iluminación", "cables", "alambres"],
-  Pinturas: [
-    "pinturas",
-    "selladores",
-    "acabados para madera",
-    "acondicionadores",
-    "solventes",
-  ],
-  "Jardín & Auto": [
-    "jardín",
-    "automotriz",
-    "cuidado automotriz",
-    "insecticidas",
-  ],
-  Seguridad: ["seguridad"],
-  Hogar: [
-    "baños",
-    "cocinas",
-    "adhesivos",
-    "pegamentos",
-    "chapas",
-    "cerraduras",
-    "jaladeras",
-    "herrajes",
-    "limpieza",
-    "embalaje",
-    "cintas",
-    "cuerdas",
-    "sujeción",
-  ],
-};
-
-function getGrupo(name: string): string {
-  const lower = name.toLowerCase();
-  for (const [grupo, palabras] of Object.entries(grupoMap)) {
-    if (palabras.some((p) => lower.includes(p.toLowerCase()))) return grupo;
-  }
-  return "Otros";
-}
-
-const todosGrupos = ["Todos", ...Object.keys(grupoMap), "Otros"].filter(
-  (g, i, arr) =>
-    g === "Todos" ||
-    (categorias.some((c) => getGrupo(c.data.name) === g) &&
-      arr.indexOf(g) === i),
-);
-
-const categoriasConGrupo = categorias.map((c) => ({
-  ...c,
-  grupo: getGrupo(c.data.name),
-}));
+const todosGrupos = [
+  "Todos",
+  "Construcción",
+  "Herramienta",
+  "Plomería & Gas",
+  "Eléctrico e Iluminación",
+  "Mantenimiento",
+  "Hogar & Oficina",
+  "Acabados",
+  "Jardín & Alberca",
+  "Autos y motocicletas",
+];
 ---
 
 <section class="section-padding bg-white dark:bg-steel/80">
@@ -123,7 +71,7 @@ const categoriasConGrupo = categorias.map((c) => ({
             text-ink dark:text-slate-100
             placeholder:text-slate dark:placeholder:text-white/35
             text-base sm:text-[1.0625rem]
-            py-4 sm:py-[1.125rem] pl-14 pr-14
+            py-4 sm:py-4.5 pl-14 pr-14
             shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:shadow-[0_2px_12px_rgba(0,0,0,0.25)]
             outline-none
             transition-[border-color,box-shadow,background-color] duration-200
@@ -190,13 +138,13 @@ const categoriasConGrupo = categorias.map((c) => ({
       </div>
 
       {/* Contador */}
-      <p
+      <!-- <p
         id="results-count"
         aria-live="polite"
         class="text-[0.8rem] font-medium leading-none text-center text-slate dark:text-white/40"
       >
         <span id="results-num">{categorias.length}</span> categorías
-      </p>
+      </p> -->
     </div>
 
     {/* ── Grid de tarjetas ── */}
@@ -205,7 +153,7 @@ const categoriasConGrupo = categorias.map((c) => ({
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >
       {
-        categoriasConGrupo.map((entry, i) => {
+        categorias.map((entry, i) => {
           const { name, description, itemCount, icon, coverImage } = entry.data;
           return (
             <a
@@ -213,7 +161,7 @@ const categoriasConGrupo = categorias.map((c) => ({
               class="group relative flex flex-col overflow-hidden rounded-2xl bg-bone dark:bg-slate-950/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated catalog-card"
               data-name={name.toLowerCase()}
               data-desc={description.toLowerCase()}
-              data-group={entry.grupo}
+              data-groups={entry.data.category.join(",")}
               data-limitada={limitado && i >= 8 ? "" : undefined}
             >
               {/* Imagen */}
@@ -407,7 +355,7 @@ const categoriasConGrupo = categorias.map((c) => ({
 </style>
 
 <script>
-  (function () {
+  document.addEventListener("astro:page-load", () => {
     const searchInput = document.getElementById(
       "catalog-search",
     ) as HTMLInputElement | null;
@@ -443,10 +391,12 @@ const categoriasConGrupo = categorias.map((c) => ({
       cards.forEach((card) => {
         const name = normalize(card.dataset.name ?? "");
         const desc = normalize(card.dataset.desc ?? "");
-        const group = card.dataset.group ?? "";
+        const groupsAttr = card.dataset.groups ?? "";
+        const groups = groupsAttr.split(",");
 
         const matchesSearch = !q || name.includes(q) || desc.includes(q);
-        const matchesGroup = activeGroup === "Todos" || group === activeGroup;
+        const matchesGroup =
+          activeGroup === "Todos" || groups.includes(activeGroup);
 
         if (matchesSearch && matchesGroup) {
           card.removeAttribute("hidden");
@@ -535,5 +485,5 @@ const categoriasConGrupo = categorias.map((c) => ({
 
       applyFilters();
     });
-  })();
+  });
 </script>

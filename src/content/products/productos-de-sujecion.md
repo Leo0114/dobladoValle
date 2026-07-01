@@ -4,6 +4,16 @@ description: "Taquetes, abrazaderas, tornillería y soldadura para cualquier uni
 itemCount: "7 productos"
 icon: "🔩"
 coverImage: "../images/productosFijacion.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Plomería & Gas"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Productos de sujeción**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

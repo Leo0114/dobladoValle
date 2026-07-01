@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "zod";
 
 const productos = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
@@ -10,6 +11,7 @@ const productos = defineCollection({
       itemCount: z.string(),
       icon: z.string().optional(),
       coverImage: image(),
+      category: z.array(z.string()),
     }),
 });
 

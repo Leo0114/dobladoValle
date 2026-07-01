@@ -4,6 +4,14 @@ description: "Alambre galvanizado, cables acerados, cadenas y tensores."
 itemCount: "4 productos"
 icon: "⛓️"
 coverImage: "../images/alambresCables.avif"
+
+category:
+  - "Construcción"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Alambres, cables y cadenas**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

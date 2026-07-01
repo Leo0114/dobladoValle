@@ -4,6 +4,17 @@ description: "Arneses, cascos, chalecos y equipo de protección personal para tu
 itemCount: "10 productos"
 icon: "👷"
 coverImage: "../images/seguridadI.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Plomería & Gas"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Acabados"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Productos de seguridad para la construcción y la industria**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

@@ -4,6 +4,17 @@ description: "Herramientas manuales para construcción, carpintería y arreglos 
 itemCount: "10 productos"
 icon: "🔨"
 coverImage: "../images/herramientas.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Plomería & Gas"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Acabados"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Herramienta en general**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

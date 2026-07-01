@@ -4,6 +4,15 @@ description: "Luminarias, focos, reflectores y cintas led para todo espacio."
 itemCount: "5 productos"
 icon: "🔦"
 coverImage: "../images/ilumi.webp"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Productos para la iluminación doméstica, industrial y comercial**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

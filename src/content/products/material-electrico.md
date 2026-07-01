@@ -4,6 +4,15 @@ description: "Cableado, apagadores, centros de carga y accesorios eléctricos."
 itemCount: "8 productos"
 icon: "💡"
 coverImage: "../images/materialElectrico.avif"
+
+category:
+  - "Construcción"
+  - "Herramienta"
+  - "Eléctrico e Iluminación"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Jardín & Alberca"
+  - "Autos y motocicletas"
 ---
 
 Explora nuestra línea de productos en la categoría de **Material eléctrico**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.

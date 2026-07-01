@@ -4,6 +4,12 @@ description: "Protege tu hogar de la humedad con impermeabilizantes y tapagotera
 itemCount: "5 productos"
 icon: "🏠"
 coverImage: "../images/impermeabilizantes.avif"
+
+category:
+  - "Construcción"
+  - "Mantenimiento"
+  - "Hogar & Oficina"
+  - "Acabados"
 ---
 
 Explora nuestra línea de productos en la categoría de **Impermeabilizantes y telas de refuerzo**. Contamos con la mejor selección de materiales y artículos para cubrir tus necesidades.
