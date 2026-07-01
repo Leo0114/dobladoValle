@@ -6,7 +6,7 @@ import { contactFormData } from "@/data/contact";
   <div class="container-custom">
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
       <!-- Form Column -->
-      <div class="lg:col-span-3">
+      <div class="lg:col-span-3" id="formulario-contacto">
         <div
           class="rounded-2xl bg-white dark:bg-steel/40 p-8 md:p-10"
           style={{ boxShadow: "var(--shadow-elevated)" }}
@@ -36,15 +36,35 @@ import { contactFormData } from "@/data/contact";
                       {field.label}
                       {field.required && <span class="text-secondary">*</span>}
                     </label>
-                    <input
-                      type={field.type}
-                      id={field.name}
-                      name={field.name}
-                      placeholder={field.placeholder}
-                      required={field.required}
-                      class="w-full rounded-xl border border-border dark:bg-ash/10 dark:text-white bg-bone px-4 py-3.5 text-sm text-ink placeholder:text-ash outline-none transition-all duration-200 focus:border-primary dark:focus:border-secondary focus:ring-2 focus:ring-primary/10"
-                      style={{ fontFamily: "var(--font-body)" }}
-                    />
+                    {field.type === "select" ? (
+                      <select
+                        id={field.name}
+                        name={field.name}
+                        required={field.required}
+                        class="w-full rounded-xl border border-border dark:bg-ash/10 dark:text-white bg-bone px-4 py-3.5 text-sm text-ink outline-none transition-all duration-200 focus:border-primary dark:focus:border-secondary focus:ring-2 focus:ring-primary/10"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        {field.options?.map((opt: any) => (
+                          <option
+                            value={opt.value}
+                            disabled={opt.value === "" && field.required}
+                            selected={opt.value === ""}
+                          >
+                            {opt.label}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field.type}
+                        id={field.name}
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        required={field.required}
+                        class="w-full rounded-xl border border-border dark:bg-ash/10 dark:text-white bg-bone px-4 py-3.5 text-sm text-ink placeholder:text-ash outline-none transition-all duration-200 focus:border-primary dark:focus:border-secondary focus:ring-2 focus:ring-primary/10"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      />
+                    )}
                   </div>
                 ))
               }
@@ -53,7 +73,7 @@ import { contactFormData } from "@/data/contact";
             <div>
               <label
                 for={contactFormData.messageField.name}
-                class="mb-2 block text-xs font-semibold tracking-[0.1em] text-ink/70 uppercase"
+                class="mb-2 block text-xs font-semibold tracking-[0.1em] dark:text-white/70 text-ink/70 uppercase"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {contactFormData.messageField.label}
@@ -239,3 +259,34 @@ import { contactFormData } from "@/data/contact";
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const params = new URLSearchParams(window.location.search);
+    const interes = params.get("interes");
+
+    if (interes) {
+      const interesSelect = document.getElementById(
+        "interes",
+      ) as HTMLSelectElement;
+      if (interesSelect) {
+        let optionExists = false;
+        for (let i = 0; i < interesSelect.options.length; i++) {
+          if (interesSelect.options[i].value === interes) {
+            optionExists = true;
+            break;
+          }
+        }
+
+        if (!optionExists) {
+          const newOption = document.createElement("option");
+          newOption.value = interes;
+          newOption.text = interes;
+          interesSelect.add(newOption);
+        }
+
+        interesSelect.value = interes;
+      }
+    }
+  });
+</script>

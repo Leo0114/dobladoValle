@@ -56,7 +56,8 @@ const { name, description, itemCount, icon, coverImage } = entry.data;
           <li aria-hidden="true">/</li>
           <li>
             <a href="/productos" class="hover:text-white transition-colors"
-              >Productos</a>
+              >Productos</a
+            >
           </li>
           <li aria-hidden="true">/</li>
           <li class="text-primary" aria-current="page">{name}</li>
@@ -97,7 +98,7 @@ const { name, description, itemCount, icon, coverImage } = entry.data;
 
       {/* Chips: itemCount + CTA */}
       <div class="flex flex-wrap items-center gap-4">
-        <span
+        <!-- <span
           class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm"
           style={{ fontFamily: "var(--font-body)" }}
         >
@@ -119,10 +120,10 @@ const { name, description, itemCount, icon, coverImage } = entry.data;
             <path d="m9 11 1 9"></path><path d="M14 11l-1 9"></path>
           </svg>
           {itemCount}
-        </span>
+        </span> -->
 
         <a
-          href="/contacto"
+          href={`/contacto?interes=${name}#formulario-contacto`}
           class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.1em] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-lg"
           style={{ fontFamily: "var(--font-body)" }}
         >
