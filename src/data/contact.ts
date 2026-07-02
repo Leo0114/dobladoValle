@@ -99,8 +99,8 @@ export const contactInfoData = {
       phoneHref: "tel:+528126206906",
       email: "ventas@dobladovalle.com",
       schedule: {
-        weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
-        saturday: "Sábado: 8:00 AM - 3:00 PM",
+        weekdays: "Lunes a Viernes: 8:00 AM - 6:00 PM",
+        saturday: "Sábado: 8:00 AM - 2:00 PM",
         sunday: "Domingo: Cerrado",
       },
       image: sanPedro1,
@@ -113,8 +113,8 @@ export const contactInfoData = {
       phoneHref: "tel:+528119936710",
       email: "ventas@dobladovalle.com",
       schedule: {
-        weekdays: "Lunes a Viernes: 8:00 AM - 7:00 PM",
-        saturday: "Sábado: 8:00 AM - 3:00 PM",
+        weekdays: "Lunes a Viernes: 8:00 AM - 6:00 PM",
+        saturday: "Sábado: 8:00 AM - 2:00 PM",
         sunday: "Domingo: Cerrado",
       },
       image: sanJemo1,

@@ -1,6 +1,6 @@
 ---
 name: "Embalaje, montaje y protección de superficies"
-description: "Materiales para proteger tus objetos durante traslados o almacenaje."
+description: "Materiales para proteger tus cosas y el sitio donde trabajas"
 itemCount: "6 productos"
 icon: "🛡️"
 coverImage: "../images/embalaje.avif"

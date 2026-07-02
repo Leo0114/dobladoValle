@@ -1,5 +1,5 @@
 ---
-name: "Bisagras, correderas y accesorios para muebles y puertas"
+name: "Jaladeras y herrajes para puertas, muebles y closets"
 description: "Bisagras, correderas y accesorios para muebles y puertas."
 itemCount: "5 productos"
 icon: "🚪"
