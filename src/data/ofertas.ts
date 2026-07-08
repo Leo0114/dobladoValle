@@ -21,7 +21,7 @@ export const ofertasData = [
     id: "03",
     name: "Guante japonés recubierto de latex palma azul Ansel-Edge",
     description:
-      "Par de guantes ideales para manejo de envíos, limpieza y recolección de residuos, y manipulación en general segura en entornos secos y húmedos",
+      "Par de guantes ideales para el manejo de envíos, limpieza y recolección de residuos, en forma segura, en entornos secos y húmedos.",
     price: "55.00",
     image: tri,
   },
@@ -29,7 +29,7 @@ export const ofertasData = [
     id: "04",
     name: "Unidades térmicas",
     description:
-      "Interruptor termomagnético marca Square D, de 20A o de 30A, 120/240V, enchufable",
+      "Interruptor termomagnético marca Square D, de 2X20A o de 2X30A, 120/240V, enchufable",
     price: "725.00",
     image: cuatro,
   },
@@ -45,7 +45,7 @@ export const ofertasData = [
     id: "06",
     name: "Downlight COB",
     description:
-      "Downlight COB, 1 hiperled, 12W, para empotrar; diámetro exterior 12.8cm, diámetro de corte para empotrar: 11.0 cm; 90-277V, 6000K, luz de día",
+      "Downlight COB, 1 hiperled, 12W, para empotrar; diámetro exterior: 12.8cm, diámetro de corte para empotrar: 11.0 cm; 90-277V, 6000K, luz de día",
     price: "197.50",
     image: seis,
   },

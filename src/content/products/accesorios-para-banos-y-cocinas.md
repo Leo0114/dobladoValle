@@ -20,5 +20,4 @@ Explora nuestra línea de productos en la categoría de **Accesorios para baños
 - Contracanastas y trampas
 - Mezcladoras p/lavabo, fregadero y bar
 - Mangueras y llaves de control
-- Trampas
 - Tarjas

@@ -47,10 +47,10 @@ import six from "@/assets/images/six.avif";
 import seven from "@/assets/images/seven.avif";
 
 // ofertaas images
-import uno from "@/assets/images/ofertaas/one.webp";
-import dos from "@/assets/images/ofertaas/dos.jpg";
+import uno from "@/assets/images/ofertaas/ilumi.webp";
+import dos from "@/assets/images/ofertaas/adesivos.avif";
 import tri from "@/assets/images/ofertaas/tres.jpg";
-import cuatro from "@/assets/images/ofertaas/cuatro.jpg";
+import cuatro from "@/assets/images/ofertaas/doble.webp";
 import cinco from "@/assets/images/ofertaas/cinco.webp";
 import seis from "@/assets/images/ofertaas/seis.jpeg";
 import siete from "@/assets/images/ofertaas/seven.webp";
