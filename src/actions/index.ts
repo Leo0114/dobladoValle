@@ -35,7 +35,7 @@ export const server = {
         from: "onboarding@resend.dev",
         to: ["ventas@dobladovalle.com"],
         replyTo: data.email,
-        subject: `Nuevo contacto: ${data.nombre} — ${data.asunto}`,
+        subject: `Nuevo contacto: ${data.nombre} — ${data.asunto || "Consulta general"}`,
         html: htmlOutput,
       });
 
