@@ -18,8 +18,8 @@ export const contactSchema = z.object({
   email: z.string().email("Correo electrónico inválido").min(1, "El correo electrónico es obligatorio"),
   telefono: z.string().optional().or(z.literal("")),
   interes: z.string().optional().or(z.literal("")),
-  asunto: z.string().min(1, "El asunto es obligatorio"),
-  mensaje: z.string().min(1, "El mensaje es obligatorio"),
+  asunto: z.string().optional().or(z.literal("")),
+  mensaje: z.string().optional().or(z.literal("")),
 });
 
 export type ContactFormData = z.infer<typeof contactSchema>;

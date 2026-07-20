@@ -151,7 +151,6 @@ export default function ContactForm() {
           <div className="sm:col-span-2">
             <label htmlFor="asunto" className={labelClass} style={{ fontFamily: "var(--font-body)" }}>
               Asunto
-              <span className="text-secondary ml-1">*</span>
             </label>
             <input
               type="text"
@@ -171,7 +170,6 @@ export default function ContactForm() {
         <div>
           <label htmlFor="mensaje" className={labelClass} style={{ fontFamily: "var(--font-body)" }}>
             Mensaje
-            <span className="text-secondary ml-1">*</span>
           </label>
           <textarea
             id="mensaje"
