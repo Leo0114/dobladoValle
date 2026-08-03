@@ -25,13 +25,13 @@ const currentPath = Astro.url.pathname;
           src="/darkLogo.png"
           id="logo"
           alt={companyInfo.shortName}
-          class="h-10 w-auto md:h-14 object-contain hidden dark:block"
+          class="h-10 w-auto md:h-14 object-contain hidden [.scrolled_&]:block dark:[.scrolled_&]:hidden"
         />
         <img
           src="/lightLogo.png"
           id="logo2"
           alt={companyInfo.shortName}
-          class="h-10 w-auto md:h-14 object-contain dark:hidden"
+          class="h-10 w-auto md:h-14 object-contain block [.scrolled_&]:hidden dark:block dark:[.scrolled_&]:block"
         />
       </a>
 
@@ -63,8 +63,11 @@ const currentPath = Astro.url.pathname;
         <ThemeToggle />
       </div>
 
-      <!-- Mobile Menu (React Island) -->
-      <MobileMenu routes={routes} currentPath={currentPath} client:load />
+      <!-- Mobile CTA & Theme & Menu (React Island) -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <ThemeToggle />
+        <MobileMenu routes={routes} currentPath={currentPath} client:load />
+      </div>
     </nav>
   </div>
 </header>
@@ -84,6 +87,7 @@ const currentPath = Astro.url.pathname;
 
       if (scrollY > 50) {
         navbar.classList.add(
+          "scrolled",
           "bg-white/95",
           "dark:bg-steel/95",
           "backdrop-blur-md",
@@ -95,6 +99,7 @@ const currentPath = Astro.url.pathname;
         if (themeToggle) themeToggle.classList.add("scrolled");
       } else {
         navbar.classList.remove(
+          "scrolled",
           "bg-white/95",
           "dark:bg-steel/95",
           "backdrop-blur-md",
@@ -123,3 +128,4 @@ const currentPath = Astro.url.pathname;
     updateNavbar();
   });
 </script>
+

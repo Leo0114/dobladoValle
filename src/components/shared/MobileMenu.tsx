@@ -15,7 +15,11 @@ export default function MobileMenu({ routes, currentPath }: MobileMenuProps) {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-60 flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 lg:hidden"
+        className={`relative z-[60] flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 lg:hidden transition-colors ${
+          isOpen
+            ? "text-white"
+            : "text-white [.scrolled_&]:text-ink [.scrolled_&]:dark:text-white"
+        }`}
         aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         aria-expanded={isOpen}
       >
