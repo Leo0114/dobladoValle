@@ -3,66 +3,69 @@ import { Icon } from "astro-icon/components";
 ---
 
 <button
-  id="theme-toggle"
-  class="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary/50 [&.scrolled]:text-ink [&.scrolled]:bg-ink/5 [&.scrolled]:hover:bg-ink/10 [&.scrolled]:dark:text-white [&.scrolled]:dark:bg-white/10 [&.scrolled]:dark:hover:bg-white/20"
+  class="theme-toggle-btn relative flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary/50 [.scrolled_&]:text-ink [.scrolled_&]:bg-ink/5 [.scrolled_&]:hover:bg-ink/10 [.scrolled_&]:dark:text-white [.scrolled_&]:dark:bg-white/10 [.scrolled_&]:dark:hover:bg-white/20"
   aria-label="Toggle dark mode"
 >
-  <span id="theme-toggle-light-icon" class="hidden">
+  <span class="theme-toggle-light-icon hidden">
     <Icon name="fa6-solid:sun" class="h-5 w-5" />
   </span>
-  <span id="theme-toggle-dark-icon" class="hidden">
+  <span class="theme-toggle-dark-icon hidden">
     <Icon name="fa6-solid:moon" class="h-5 w-5" />
   </span>
 </button>
 
 <script>
-  // Add listener for astro page changes
   document.addEventListener("astro:page-load", () => {
-    const themeToggleDarkIcon = document.getElementById(
-      "theme-toggle-dark-icon"
-    );
-    const themeToggleLightIcon = document.getElementById(
-      "theme-toggle-light-icon"
-    );
-    const themeToggleBtn = document.getElementById("theme-toggle");
+    const updateThemeIcons = () => {
+      const isDark =
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    if (!themeToggleBtn || !themeToggleDarkIcon || !themeToggleLightIcon) return;
+      const darkIcons = document.querySelectorAll(".theme-toggle-dark-icon");
+      const lightIcons = document.querySelectorAll(".theme-toggle-light-icon");
 
-    // Change the icons inside the button based on previous settings
-    if (
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      themeToggleLightIcon.classList.remove("hidden");
-    } else {
-      themeToggleDarkIcon.classList.remove("hidden");
-    }
-
-    themeToggleBtn.addEventListener("click", function () {
-      // toggle icons inside button
-      themeToggleDarkIcon.classList.toggle("hidden");
-      themeToggleLightIcon.classList.toggle("hidden");
-
-      // if set via local storage previously
-      if (localStorage.getItem("theme")) {
-        if (localStorage.getItem("theme") === "light") {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("theme", "dark");
+      darkIcons.forEach((icon) => {
+        if (isDark) {
+          icon.classList.add("hidden");
         } else {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("theme", "light");
+          icon.classList.remove("hidden");
         }
-      } else {
-        // if NOT set via local storage previously
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("theme", "light");
+      });
+
+      lightIcons.forEach((icon) => {
+        if (isDark) {
+          icon.classList.remove("hidden");
         } else {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("theme", "dark");
+          icon.classList.add("hidden");
         }
-      }
+      });
+    };
+
+    updateThemeIcons();
+
+    const toggleButtons = document.querySelectorAll(".theme-toggle-btn");
+    toggleButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (localStorage.getItem("theme")) {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          }
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+          }
+        }
+        updateThemeIcons();
+      });
     });
   });
 </script>

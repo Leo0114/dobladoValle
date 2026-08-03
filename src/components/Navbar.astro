@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
 
 <header
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+  class="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
 >
   <div class="container-custom">
     <nav
@@ -18,7 +18,7 @@ const currentPath = Astro.url.pathname;
       <!-- Logo -->
       <a
         href="/"
-        class="relative z-60 flex items-center gap-3"
+        class="relative z-[1001] flex items-center gap-3"
         aria-label={companyInfo.shortName}
       >
         <img
@@ -78,7 +78,7 @@ const currentPath = Astro.url.pathname;
   document.addEventListener("astro:page-load", () => {
     const navbar = document.getElementById("navbar");
     const navLinks = document.querySelectorAll(".nav-link");
-    const themeToggle = document.getElementById("theme-toggle");
+    const themeToggles = document.querySelectorAll(".theme-toggle-btn");
 
     if (!navbar) return;
 
@@ -96,7 +96,7 @@ const currentPath = Astro.url.pathname;
         );
 
         navLinks.forEach((link) => link.classList.add("scrolled"));
-        if (themeToggle) themeToggle.classList.add("scrolled");
+        themeToggles.forEach((btn) => btn.classList.add("scrolled"));
       } else {
         navbar.classList.remove(
           "scrolled",
@@ -108,7 +108,7 @@ const currentPath = Astro.url.pathname;
         );
 
         navLinks.forEach((link) => link.classList.remove("scrolled"));
-        if (themeToggle) themeToggle.classList.remove("scrolled");
+        themeToggles.forEach((btn) => btn.classList.remove("scrolled"));
       }
     };
 
