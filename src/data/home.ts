@@ -70,7 +70,7 @@ export const heroSlides: HeroSlide[] = [
   {
     title: "Dos sucursales para servirte",
     description:
-      "Visítanos en nuestras sucursales San Pedro y San Jemo. Atención personalizada garantizada.",
+      "Visítanos en nuestras sucursales San Pedro y San Jerónimo. Atención personalizada garantizada.",
     cta: { label: "Ubicaciones", href: "/contacto" },
     imagePath: "/images/two.avif",
   },
@@ -205,21 +205,14 @@ export const topProductsData = {
     { name: "Dewalt", image: dewalt, category: "Herramientas" },
     { name: "Coflex", image: coflex, category: "Plomería" },
     { name: "Tecnolite", image: tecnolite, category: "Iluminación" },
-    { name: "Urrea", image: urrea, category: "Herramientas" },
-    // { name: "Makita", image: makita, category: "Herramientas" },
-    // { name: "Milwaukee", image: milwaukee, category: "Herramientas" },
-    // { name: "Sayer", image: sayer, category: "Pinturas" },
-    // { name: "Helvex", image: helvex, category: "Plomería" },
-    // { name: "Volteck", image: volteck, category: "Eléctrico" },
-    // { name: "3M", image: treesm, category: "Adhesivos" },
-  ],
+  ]
 };
 
-// ── CTA ──
+// ── CTA Banner ──
 export const ctaData = {
-  title: "¿Listo para iniciar tu proyecto?",
+  title: "¿Necesitas una cotización para tu obra o proyecto?",
   description:
-    "Contamos con la experiencia y los productos que necesitas. Solicita tu cotización sin compromiso.",
+    "Envíanos tu lista de materiales y te preparamos un presupuesto con precio especial por volumen.",
   cta: {
     label: "Solicitar cotización",
     href: "/contacto",
@@ -227,7 +220,7 @@ export const ctaData = {
   image: tres,
 };
 
-// ── Branches ──
+// ── Branches Section ──
 export interface BranchItem {
   name: string;
   address: string;
@@ -235,7 +228,7 @@ export interface BranchItem {
   whatsappHref: string;
   phoneHref: string;
   images: ImageMetadata[];
-  mapEmbedUrl?: string;
+  mapEmbedUrl: string;
 }
 
 export const branchesData = {
@@ -244,9 +237,9 @@ export const branchesData = {
   description: "Visítanos en cualquiera de nuestras sucursales.",
   items: [
     {
-      name: "Matriz San Pedro",
+      name: "San Pedro, Nuevo León",
       address: "San Pedro, Nuevo León",
-      schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
+      schedule: "Lun - Vie: 8:00 AM - 6:00 PM | Sáb: 8:00 AM - 2:00 PM | Dom: Cerrado",
       whatsappHref: "https://wa.me/8126206906",
       phoneHref: "tel:+528126206906",
       images: [sanPedro1, sanPedro2],
@@ -254,9 +247,9 @@ export const branchesData = {
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.3930147879655!2d-100.39207569999999!3d25.6582635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd82d620c2e7%3A0x67ba20f874031afe!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838839762!5m2!1ses-419!2smx",
     },
     {
-      name: "Sucursal San Jemo",
+      name: "San Jerónimo, Nuevo León",
       address: "San Jerónimo, Nuevo León",
-      schedule: "Lun - Sáb: 8:00 AM - 7:00 PM",
+      schedule: "Lun - Vie: 8:00 AM - 6:00 PM | Sáb: 8:00 AM - 2:00 PM | Dom: Cerrado",
       whatsappHref: "https://wa.me/8119936710",
       phoneHref: "tel:+528119936710",
       images: [sanJemo1, sanJemo2],

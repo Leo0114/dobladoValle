@@ -144,16 +144,16 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Column 4: Contact -->
+      <!-- Column 4: Contact & Horarios -->
       <div>
         <h4
           class="mb-5 text-xs font-semibold tracking-[0.2em] text-white uppercase"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Contacto
+          Contacto y Horarios
         </h4>
-        <ul class="flex flex-col gap-4">
-          <li class="flex items-start gap-3">
+        <ul class="flex flex-col gap-3 text-sm text-white/50 mb-4">
+          <li class="flex items-start gap-2.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -171,14 +171,12 @@ const currentYear = new Date().getFullYear();
               ></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span class="text-sm text-white/50">
-              Monterrey, Nuevo León, México
-            </span>
+            <span>San Pedro, NL / San Jerónimo, NL</span>
           </li>
           <li>
             <a
               href={companyInfo.phoneHref}
-              class="flex items-center gap-3 text-sm text-white/50 transition-colors hover:text-primary dark:hover:text-secondary-dark"
+              class="flex items-center gap-2.5 text-white/50 transition-colors hover:text-primary dark:hover:text-secondary-dark"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +200,7 @@ const currentYear = new Date().getFullYear();
           <li>
             <a
               href={`mailto:${companyInfo.email}`}
-              class="flex items-center gap-3 text-sm text-white/50 transition-colors hover:text-primary dark:hover:text-secondary"
+              class="flex items-center gap-2.5 text-white/50 transition-colors hover:text-primary dark:hover:text-secondary"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -223,6 +221,13 @@ const currentYear = new Date().getFullYear();
             </a>
           </li>
         </ul>
+
+        <div class="pt-3 border-t border-white/10 text-xs text-white/50 space-y-1">
+          <p class="font-semibold text-white/80 mb-1.5">Horarios de Atención:</p>
+          <p><span class="text-white/70">Lun - Vie:</span> 8:00 AM - 6:00 PM</p>
+          <p><span class="text-white/70">Sábado:</span> 8:00 AM - 2:00 PM</p>
+          <p><span class="text-white/70">Domingo:</span> Cerrado</p>
+        </div>
       </div>
     </div>
   </div>

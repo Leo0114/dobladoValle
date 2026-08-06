@@ -186,6 +186,21 @@ import { Image } from "astro:assets";
                     </p>
                   </div>
                 </div>
+
+                {/* Map Embed */}
+                {branch.mapEmbedUrl && (
+                  <div class="mt-6 h-64 w-full overflow-hidden rounded-xl border border-border-light dark:border-white/10">
+                    <iframe
+                      src={branch.mapEmbedUrl}
+                      class="h-full w-full"
+                      style="border:0;"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      title={`Ubicación de ${branch.name}`}
+                    ></iframe>
+                  </div>
+                )}
               </div>
             </div>
           </div>

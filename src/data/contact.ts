@@ -93,7 +93,7 @@ export const contactInfoData = {
   title: "Visítanos",
   branches: [
     {
-      name: "Matriz San Pedro",
+      name: "San Pedro, Nuevo León",
       address: "San Pedro, Nuevo León",
       whatsappHref: "https://wa.me/8126206906",
       phoneHref: "tel:+528126206906",
@@ -104,10 +104,11 @@ export const contactInfoData = {
         sunday: "Domingo: Cerrado",
       },
       image: sanPedro1,
-      mapEmbedUrl: "",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.3930147879655!2d-100.39207569999999!3d25.6582635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bd82d620c2e7%3A0x67ba20f874031afe!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838839762!5m2!1ses-419!2smx",
     },
     {
-      name: "Sucursal San Jemo",
+      name: "San Jerónimo, Nuevo León",
       address: "San Jerónimo, Nuevo León",
       whatsappHref: "https://wa.me/8119936710",
       phoneHref: "tel:+528119936710",
@@ -118,7 +119,8 @@ export const contactInfoData = {
         sunday: "Domingo: Cerrado",
       },
       image: sanJemo1,
-      mapEmbedUrl: "",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.647718136275!2d-100.3767643163235!3d25.682970119132822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629617f953267f%3A0xbd7c1ca0bb5a85c7!2sDoblado%20Valle!5e0!3m2!1ses-419!2smx!4v1779838936546!5m2!1ses-419!2smx",
     },
   ] as ContactBranch[],
 };
