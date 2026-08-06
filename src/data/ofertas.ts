@@ -6,7 +6,7 @@ export const ofertasData = [
     name: "Plafones led slim",
     description:
       "Redondos o cuadrados, 3W, para empotrar; dimensión exterior: 8.5 cm; dimensión de corte para empotrar: 7.0 cm; 85-265V, 6500K, luz de día",
-    price: "55.00",
+    price: "45.00",
     image: uno,
   },
   {
@@ -14,7 +14,7 @@ export const ofertasData = [
     name: "Sellador para acabados profesionales",
     description:
       "Base solvente, de fácil aplicación con brocha o rodillo. Puede brindar una apariencia natural, húmeda o brillante. Presentación de galón. También disponible por litro o en cubeta de 19L.",
-    price: "719.00",
+    price: "695.00",
     image: dos,
   },
   {
@@ -30,7 +30,7 @@ export const ofertasData = [
     name: "Unidades térmicas",
     description:
       "Interruptor termomagnético marca Square D, de 2X20A o de 2X30A, 120/240V, enchufable",
-    price: "725.00",
+    price: "759.00",
     image: cuatro,
   },
   {
